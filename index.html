@@ -8,17 +8,19 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="author" content="Team Gamespec" />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més"
+    />
     <title>Gamespec</title>
     <!--Favicon-->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <!--Font Awesome CSS-->
     <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
     <!--CSS propis-->
     <link rel="stylesheet" href="css/style.css" />
     <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!--jQuery-->
     <script
@@ -26,28 +28,16 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <!--jQueryUI-->
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-      crossorigin="anonymous"
-    ></script>
-    <!--jQueryUI CSS-->
-    <link
-      rel="stylesheet"
-      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-    <!--Google Fonts-->
     <!--Scripts-->
     <script src="js/modernizr.js"></script>
   </head>
   <body>
     <!-- Header -->
-    <section class="s-pageheader s-pageheader--home">
+    <section class="pageheader">
       <header class="header">
-        <div class="header__content row">
+        <div class="header_content row">
           <!-- Logo -->
-          <div class="header__logo">
+          <div class="header_logo">
             <a
               class="logo"
               href="index.html"
@@ -58,7 +48,7 @@
           </div>
           <!-- Fi del Logo -->
           <!-- XXSS -->
-          <ul class="header__social">
+          <ul class="header_social">
             <li>
               <a href="#" target="_blank" title="Ves al Facebook de Gamespec"
                 ><i class="fab fa-facebook" aria-hidden="true"></i
@@ -82,16 +72,16 @@
           </ul>
           <!-- Fi de les XXSS -->
           <!-- Toggle Menu -->
-          <a class="header__toggle-menu" href="#0" title="Menú"
+          <a class="header_toggle-menu" href="#0" title="Menú"
             ><span>Menu</span></a
           >
-          <nav class="header__nav-wrap">
+          <nav class="header_nav-wrap">
             <img
-              class="header__nav-heading header__nav-logo"
+              class="header_nav-heading header_nav-logo"
               src="images/gamespec_logo.svg"
               alt="Homepage"
             />
-            <ul class="header__nav">
+            <ul class="header_nav">
               <li><a href="#" title="">Jocs</a></li>
               <li><a href="#" title="">Articles</a></li>
               <li><a href="#" title="">Els nostres redactors</a></li>
@@ -100,7 +90,7 @@
             <a
               href="#"
               title="Tenca el menú"
-              class="header__overlay-close close-mobile-menu"
+              class="header_overlay-close close-mobile-menu"
               >Close</a
             >
           </nav>
@@ -110,10 +100,124 @@
     </section>
     <!-- Fi del Header -->
     <!-- Breadcrumb -->
-    <ul class="breadcrumb">
-      <li><a href="#">Inici</a></li>
-    </ul>
+    <div class="breadcrumb">
+      <ul class="breadcrumb-content">
+        <li><a href="#">Inici</a></li>
+      </ul>
+    </div>
     <!-- Fi del Breadcrumb -->
+    <!-- Destacats -->
+    <div class="container">
+      <div class="pageheader-content row">
+        <div class="col-full">
+          <div class="featured">
+            <div class="featured__column featured__column--big">
+              <div
+                class="entry"
+                style="
+                  background-image: url('images/thumbs/featured/featured-guitarman.jpg');
+                "
+              >
+                <div class="entry__content">
+                  <span class="entry__category"><a href="#0">Music</a></span>
+
+                  <h1>
+                    <a href="#0" title=""
+                      >What Your Music Preference Says About You and Your
+                      Personality.</a
+                    >
+                  </h1>
+
+                  <div class="entry__info">
+                    <a href="#0" class="entry__profile-pic">
+                      <img
+                        class="avatar"
+                        src="images/avatars/user-03.jpg"
+                        alt=""
+                      />
+                    </a>
+
+                    <ul class="entry__meta">
+                      <li><a href="#0">John Doe</a></li>
+                      <li>December 29, 2017</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="featured__column featured__column--small">
+              <div
+                class="entry"
+                style="
+                  background-image: url('images/thumbs/featured/featured-watch.jpg');
+                "
+              >
+                <div class="entry__content">
+                  <span class="entry__category"
+                    ><a href="#0">Management</a></span
+                  >
+
+                  <h1>
+                    <a href="#0" title=""
+                      >The Pomodoro Technique Really Works.</a
+                    >
+                  </h1>
+
+                  <div class="entry__info">
+                    <a href="#0" class="entry__profile-pic">
+                      <img
+                        class="avatar"
+                        src="images/avatars/user-03.jpg"
+                        alt=""
+                      />
+                    </a>
+
+                    <ul class="entry__meta">
+                      <li><a href="#0">John Doe</a></li>
+                      <li>December 27, 2017</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="entry"
+                style="
+                  background-image: url('images/thumbs/featured/featured-beetle.jpg');
+                "
+              >
+                <div class="entry__content">
+                  <span class="entry__category"
+                    ><a href="#0">LifeStyle</a></span
+                  >
+
+                  <h1>
+                    <a href="#0" title="">Throwback To The Good Old Days.</a>
+                  </h1>
+
+                  <div class="entry__info">
+                    <a href="#0" class="entry__profile-pic">
+                      <img
+                        class="avatar"
+                        src="images/avatars/user-03.jpg"
+                        alt=""
+                      />
+                    </a>
+
+                    <ul class="entry__meta">
+                      <li><a href="#0">John Doe</a></li>
+                      <li>December 21, 2017</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fi dels Destacats -->
     <!-- Scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>

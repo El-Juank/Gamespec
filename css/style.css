@@ -1,22 +1,57 @@
-/* Style the list */
-ul.breadcrumb {
+/* ===================================================================
+ *
+ * Estils Gamespec, projecte final PiCE Girona 2020
+ *
+ * =================================================================== */
+
+/* Estils generals */
+:root {
+  --colorCorp: #123abc;
+}
+
+/* Estils header */
+
+.header {
+  position: absolute;
+  text-align: center;
+  top: 40px;
+  width: 100%;
+}
+
+.header_nav li a {
+  display: block;
+  color: var(--colorCorp);
+}
+
+.header_nav li a:hover {
+  color: var(--colorCorp);
+  border-bottom: 5px solid var(--colorCorp);
+  padding-bottom: 9px;
+}
+
+/* Estils breadcrumb */
+
+.breadcrumb {
+  margin-bottom: 30px;
+}
+
+ul.breadcrumb-content {
   padding: 10px 16px;
   list-style: none;
-  background-color: #123abc;
+  background-color: var(--colorCorp);
   margin-left: 0px !important;
 }
 
-ul.breadcrumb li:first-child {
+ul.breadcrumb-content li:first-child {
   margin-left: 120px;
 }
 
-ul.breadcrumb li {
+ul.breadcrumb-content li {
   display: inline;
   font-size: 18px;
 }
 
-/* Afegeix una fletxa després de cada element de la llista */
-ul.breadcrumb li + li:before {
+ul.breadcrumb-content li + li:before {
   padding: 8px;
   padding-left: 0px !important;
   color: white;
@@ -24,18 +59,19 @@ ul.breadcrumb li + li:before {
   font-family: "Font Awesome 5 Free";
 }
 
-ul.breadcrumb li a {
+ul.breadcrumb-content li a {
   color: white;
   text-decoration: none;
 }
 
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
+ul.breadcrumb-content li a:hover {
   text-decoration: underline;
 }
 
+/* Media Queries */
+
 @media only screen and (max-width: 600px) {
-  ul.breadcrumb li:first-child {
+  ul.breadcrumb-content li:first-child {
     margin-left: 5px;
   }
 }
