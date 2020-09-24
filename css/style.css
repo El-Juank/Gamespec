@@ -1,0 +1,41 @@
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #123abc;
+  margin-left: 0px !important;
+}
+
+ul.breadcrumb li:first-child {
+  margin-left: 120px;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Afegeix una fletxa després de cada element de la llista */
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  padding-left: 0px !important;
+  color: white;
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  ul.breadcrumb li:first-child {
+    margin-left: 5px;
+  }
+}
