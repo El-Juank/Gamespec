@@ -4,14 +4,38 @@
  *
  * =================================================================== */
 
+/* Fonts */
+
+@font-face {
+  font-family: "titles";
+  src: url("../fonts/Baloo/BalooTammudu2-Bold.ttf");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "body";
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+  font-style: normal;
+  font-weight: bold;
+}
+
 /* Estils generals */
+
 :root {
   --colorCorp: #123abc;
 }
 
-a,
-i {
-  transition: all 0.3s ease-in-out;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "titles";
+}
+
+p {
+  font-family: "body";
 }
 
 /* Estils header */
@@ -44,6 +68,7 @@ i {
 
 .header_login i {
   color: var(--colorCorp);
+  transition: all 0.3s ease-in-out;
   font-size: 25px;
 }
 .header_login i:hover {
@@ -131,4 +156,10 @@ ul.breadcrumb-content li a:hover {
     right: 45px;
     top: 25px;
   }
+}
+
+/* Altres */
+
+.entry_meta-links a {
+  font-family: "titles";
 }

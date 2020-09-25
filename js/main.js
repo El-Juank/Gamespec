@@ -152,7 +152,7 @@
 
     containerBricks.imagesLoaded(function () {
       containerBricks.masonry({
-        itemSelector: ".masonry__brick",
+        itemSelector: ".masonry_brick",
         percentPosition: true,
         resize: true,
       });
