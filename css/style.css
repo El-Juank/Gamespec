@@ -9,6 +9,11 @@
   --colorCorp: #123abc;
 }
 
+a,
+i {
+  transition: all 0.3s ease-in-out;
+}
+
 /* Estils header */
 
 .header {
@@ -27,6 +32,22 @@
   color: var(--colorCorp);
   border-bottom: 5px solid var(--colorCorp);
   padding-bottom: 9px;
+}
+
+.header_login {
+  height: 21px;
+  min-width: 21px;
+  position: absolute;
+  right: 45px;
+  top: 100px;
+}
+
+.header_login i {
+  color: var(--colorCorp);
+  font-size: 25px;
+}
+.header_login i:hover {
+  color: rgba(18, 58, 188, 0.4);
 }
 
 /* Estils breadcrumb */
@@ -68,10 +89,46 @@ ul.breadcrumb-content li a:hover {
   text-decoration: underline;
 }
 
+/* back2Top */
+
+#back2Top {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  border-radius: 35px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--colorCorp);
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
+  transition: all 0.8s ease-in-out;
+}
+#back2Top:hover {
+  background-color: rgba(18, 58, 188, 0.4);
+  color: white;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 600px) {
   ul.breadcrumb-content li:first-child {
     margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header_login {
+    height: 21px;
+    min-width: 21px;
+    position: absolute;
+    right: 45px;
+    top: 25px;
   }
 }

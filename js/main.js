@@ -277,23 +277,23 @@
 
   /* Back to Top
    * ------------------------------------------------------ */
-  var clBackToTop = function () {
-    var pxShow = 500,
-      goTopButton = $(".go-top");
 
-    // Show or hide the button
-    if ($(window).scrollTop() >= pxShow)
-      goTopButton.addClass("link-is-visible");
-
-    $(window).on("scroll", function () {
-      if ($(window).scrollTop() >= pxShow) {
-        if (!goTopButton.hasClass("link-is-visible"))
-          goTopButton.addClass("link-is-visible");
-      } else {
-        goTopButton.removeClass("link-is-visible");
-      }
+  $(window).scroll(function() {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').fadeIn();
+    } else {
+        $('#back2Top').fadeOut();
+    }
+});
+$(document).ready(function() {
+    $("#back2Top").click(function(event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
     });
-  };
+
+});
 
   /* Map
    * ------------------------------------------------------ */
@@ -548,7 +548,6 @@
     clAlertBoxes();
     clAOS();
     clAjaxChimp();
-    clBackToTop();
     clGoogleMap();
   })();
 })(jQuery);
