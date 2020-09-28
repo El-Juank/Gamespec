@@ -126,56 +126,8 @@
       <div class="row">
         <h1 class="s-content_header-title">Els nostres redactors</h1>
         <!-- Llistat de redactors -->
-        <div class="container">
-          <!-- Fer appends amb els redactors (nosaltres 4) -->
-          <!-- Redactor -->
-          <div class="s-content_author">
-            <img src="images/avatars/user-03.jpg" alt="" />
-
-            <div class="s-content_author-about">
-              <h4 class="s-content_author-name">
-                <a>Jonathan Doe</a>
-              </h4>
-
-              <p>
-                Alias aperiam at debitis deserunt dignissimos dolorem doloribus,
-                fuga fugiat impedit laudantium magni maxime nihil nisi quidem
-                quisquam sed ullam voluptas voluptatum. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit.
-              </p>
-              
-              <ul class="author-social">
-                <li><a href="#0">Facebook</a></li>
-                <li><a href="#0">Twitter</a></li>
-                <li><a href="#0">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- Fi del Redactor -->
-          <!-- Redactor -->
-          <div class="redactor-content s-content_author">
-            <img src="images/avatars/user-03.jpg" alt="" />
-
-            <div class="s-content_author-about">
-              <h4 class="s-content_author-name">
-                <a href="#0">Jonathan Doe</a>
-              </h4>
-
-              <p>
-                Alias aperiam at debitis deserunt dignissimos dolorem doloribus,
-                fuga fugiat impedit laudantium magni maxime nihil nisi quidem
-                quisquam sed ullam voluptas voluptatum. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit.
-              </p>
-
-              <ul class="author-social">
-                <li><a href="#0">Facebook</a></li>
-                <li><a href="#0">Twitter</a></li>
-                <li><a href="#0">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- Fi del Redactor -->
+        <div id="authors" class="container">
+          <!-- Aquí adins aniran tots els redactors de la BBDD mitjançant el javascript de més assota -->
         </div>
       </div>
     </div>
@@ -241,6 +193,66 @@
       ><span class="fa fa-chevron-up"></span
     ></a>
     <!-- Fi del Back to Top -->
+    <!-- Script Principal -->
+    <script language="javascript">
+      $(function () {
+        //Para hacer la función solo una vez
+        $.get("http://localhost:3000/redactors", function (data, status) {
+          var i = 0;
+          for (i = 0; i < data.length; i++) {
+            var facebook = "";
+            if (data[i].redactorfacebook == null) {
+              facebook = "&nbsp;";
+            } else {
+              facebook =
+                "<li><a href='" +
+                data[i].redactorfacebook +
+                "' target='_blank'>Facebook</a></li>";
+            }
+            var twitter = "";
+            if (data[i].redactortwitter == null) {
+              twitter = "&nbsp;";
+            } else {
+              twitter =
+                "<li><a href='" +
+                data[i].redactortwitter +
+                "' target='_blank'>Twitter</a></li>";
+            }
+            var instagram = "";
+            if (data[i].redactorinstagram == null) {
+              instagram = "&nbsp;";
+            } else {
+              instagram =
+                "<li><a href='" +
+                data[i].redactorinstagram +
+                "' target='_blank'>Instagram</a></li>";
+            }
+
+            $("#authors").append(
+              "<div class='s-content_author'>" +
+                "<img src='" +
+                data[i].redactorimage +
+                "' alt='Imatge de " +
+                data[i].redactornom +
+                "' />" +
+                "<div class='s-content_author-about'>" +
+                "<h4 class='s-content_author-name'>" +
+                data[i].redactornom +
+                "</h4>" +
+                "<p>" +
+                data[i].redactordescripcio +
+                "</p>" +
+                "<ul class='author-social'>" +
+                facebook +
+                twitter +
+                instagram +
+                "</ul></div></div>"
+            );
+          }
+        });
+      });
+    </script>
+    <!-- Fi del Script Principal -->
     <!-- Scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
