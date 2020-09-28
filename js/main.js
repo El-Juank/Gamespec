@@ -275,7 +275,7 @@
     };
   };
 
-  /* Back to Top
+  /* Back2Top
    * ------------------------------------------------------ */
 
   $(window).scroll(function() {
@@ -318,10 +318,10 @@ $(document).ready(function() {
 
   var clGoogleMap = function () {
     if (typeof google === "object" && typeof google.maps === "object") {
-      // 37.422424, -122.085661
 
-      var latitude = 37.422424,
-        longitude = -122.085661,
+      var latitude = 41.984795,
+        longitude = 2.811250,
+        //Latitud i longitud de la Fira de Girona
         map_zoom = 14,
         main_color = "#0054a5",
         saturation_value = -30,
