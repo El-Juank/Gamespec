@@ -184,6 +184,38 @@ footer {
   color: #fff;
 }
 
+/* Els nostres redactors */
+
+.s-content_author {
+  margin: 35px 0px;
+}
+
+.s-content_author p{
+  text-align: justify;
+}
+
+.author-social {
+  list-style: none;
+  margin-left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.author-social li {
+  display: inline-block;
+  margin-right: 1rem;
+  padding-left: 0;
+}
+
+.author-social a {
+  color: var(--colorCorp);
+}
+
+.author-social a:hover {
+  color: rgba(18, 58, 188, 0.4);
+}
+
 /* Contacta'ns */
 
 /* Estils dels botons "zoom in/out" del mapa de Google*/
@@ -238,7 +270,7 @@ footer {
   padding-right: 6rem;
 }
 
-.contact-content .btn{
+.contact-content .btn {
   margin-top: 30px;
 }
 

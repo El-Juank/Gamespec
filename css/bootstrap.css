@@ -3473,7 +3473,7 @@ footer h4::after {
 }
 
 .s-content_author {
-  margin-top: 10.2rem;
+  /*margin-top: 10.2rem;*/
   padding-left: 9rem;
   position: relative;
 }
@@ -3497,25 +3497,6 @@ footer h4::after {
 }
 
 .s-content_author-name a {
-  color: #151515;
-}
-
-.s-content_author-social {
-  list-style: none;
-  margin-left: 0;
-
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.s-content_author-social li {
-  display: inline-block;
-  margin-right: 1rem;
-  padding-left: 0;
-}
-
-.s-content_author-social a {
   color: #151515;
 }
 
