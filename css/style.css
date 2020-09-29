@@ -100,18 +100,61 @@ ul.breadcrumb-content li {
 ul.breadcrumb-content li + li:before {
   padding: 8px;
   padding-left: 0px !important;
-  color: white;
+  color: #fff;
   content: "\f054";
   font-family: "Font Awesome 5 Free";
 }
 
 ul.breadcrumb-content li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
 ul.breadcrumb-content li a:hover {
   text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+  padding-top: 60px;
+}
+
+.footer {
+  background-color: var(--colorCorp);
+}
+
+.footer_logo {
+  width: 265px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer_social {
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.footer_social ul {
+  list-style: none;
+  font-size: 23px;
+  line-height: 1;
+  margin: 0 45%;
+  padding: 0;
+  position: absolute;
+}
+
+.footer_social li {
+  display: inline-block;
+  margin-right: 5px;
+  padding-left: 0;
+}
+
+.footer_social li a:hover {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* back2Top */
@@ -125,26 +168,123 @@ ul.breadcrumb-content li a:hover {
   display: none;
   cursor: pointer;
   border-radius: 35px;
+  border: 1px solid #fff;
   position: fixed;
   bottom: 30px;
   right: 30px;
   background-color: var(--colorCorp);
-  color: white;
+  color: #fff;
   text-align: center;
-  font-size: 30px;
+  font-size: 29px;
   text-decoration: none;
   transition: all 0.8s ease-in-out;
 }
 #back2Top:hover {
   background-color: rgba(18, 58, 188, 0.4);
-  color: white;
+  color: #fff;
+}
+
+/* Els nostres redactors */
+
+.s-content_author {
+  margin: 35px 0px;
+}
+
+.s-content_author p{
+  text-align: justify;
+}
+
+.author-social {
+  list-style: none;
+  margin-left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.author-social li {
+  display: inline-block;
+  margin-right: 1rem;
+  padding-left: 0;
+}
+
+.author-social a {
+  color: var(--colorCorp);
+}
+
+.author-social a:hover {
+  color: rgba(18, 58, 188, 0.4);
+}
+
+/* Contacta'ns */
+
+/* Estils dels botons "zoom in/out" del mapa de Google*/
+#map-wrap #map-zoom-in,
+#map-wrap #map-zoom-out {
+  height: 3.2rem;
+  width: 3.2rem;
+  cursor: pointer;
+  margin-right: 4rem;
+  color: #fff;
+  background-color: rgba(18, 58, 188, 0.4);
+  display: none;
+}
+
+#map-wrap #map-zoom-in:hover::before,
+#map-wrap #map-zoom-out:hover::before {
+  background-color: var(--colorCorp);
+}
+
+#map-wrap #map-zoom-in {
+  margin-bottom: 2px;
+  margin-top: 30px;
+}
+
+#map-wrap #map-zoom-in::before,
+#map-wrap #map-zoom-out::before {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+#map-wrap #map-zoom-in::before {
+  content: "\f067";
+  /*Icono de font awesome d'un signe més*/
+}
+
+#map-wrap #map-zoom-out::before {
+  content: "\f068";
+  /*Icono de font awesome d'un signe menys*/
+}
+
+.contact-content {
+  margin-top: 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.contact-content .btn {
+  margin-top: 30px;
 }
 
 /* Media Queries */
 
-@media only screen and (max-width: 600px) {
-  ul.breadcrumb-content li:first-child {
-    margin-left: 5px;
+@media only screen and (max-width: 1200px) {
+  .footer_social ul {
+    margin: 0 43%;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .footer_social ul {
+    margin: 0 40%;
   }
 }
 
@@ -155,6 +295,18 @@ ul.breadcrumb-content li a:hover {
     position: absolute;
     right: 45px;
     top: 25px;
+  }
+  .footer_social ul {
+    margin: 0 38%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ul.breadcrumb-content li:first-child {
+    margin-left: 5px;
+  }
+  .contact-content {
+    margin-top: 30px;
   }
 }
 
