@@ -5,9 +5,9 @@ $server = "217.61.130.155";  $user = "admin_games"; $pass = "12345678";  $bd = "
 $conexion = mysqli_connect($server, $user, $pass,$bd) 
 or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
-$titol = $_GET["titol"];
-$portada = $_GET["portada"];
-$contingut = $_GET["contingut"];
+$titol = $_POST["titol"];
+$portada = $_POST["portada"];
+$contingut = $_POST["contingut"];
 $data = date('Y-m-d H:i:s');
 echo $data;
 $redactorid = "1";
@@ -18,9 +18,9 @@ mysqli_stmt_execute($statement);
 
 $response = array();
 $last_id = mysqli_insert_id($conexion);
-$clientes[] = array('last_id'=> $last_id);
+$response = array('id'=> $last_id);
 
-$response["json"] = $clientes;
+
 $json_string = json_encode($response);
 echo $json_string;
 ?>

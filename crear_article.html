@@ -33,30 +33,24 @@
         content="Try the latest sample of CKEditor 4 and learn more about customizing your WYSIWYG editor with endless possibilities.">
 
     <script>
-        $(document).ready(function () {
-            $("#btn_publicar").click(function () {
+        $("#btn_publicar").click(function () {
 
-                var titol = document.getElementById("titol").value;
-                var portada = document.getElementById("portada").value;
-                var contingut = $('#editor').html();
-                console.log("web_services/insert_article.php?titol=" + titol + "&portada=" + portada + "&contingut=" + contingut); 
+            var titol = document.getElementById("titol").value;
+            var portada = document.getElementById("portada").value;
+            var contingut = $('#editor').html();
+            console.log("http://localhost/gamespec/web_services/insert_article.php?titol=" + titol + "&portada=" + portada + "&contingut=" + contingut);
 
-                $.get("web_services/insert_article.php?titol=" + titol + "&portada=" + portada + "&contingut=" + contingut, function (data, json) {
-                    var obj = $.parseJSON(data);
-                    alert(data)
-                    if (obj.id > 0) {
-                        window.location.href = "./index.html"
-
-                    }
-
+            $.post("web_services/insert_article.php",
+                {
+                    titol: titol,
+                    portada: portada,
+                    contingut: contingut
+                },
+                function (data, status) {
+                    window.location.href = "./index.html"
                 });
-            });
 
-            $("#btn_registra").click(function () {
-
-                window.location.href = "./registrarse.html"
-            });
-
+        });
 
         });
 
@@ -114,6 +108,7 @@
                         <li><a href="#" title="">Jocs</a></li>
                         <li><a href="#" title="">Articles</a></li>
                         <li><a href="#" title="">Els nostres redactors</a></li>
+                        <li><a href="crear_article.html" title="">Escriure article</a></li>
                         <li><a href="#" title="">Contacta'ns</a></li>
                     </ul>
                     <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
