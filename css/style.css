@@ -190,7 +190,7 @@ footer {
   margin: 35px 0px;
 }
 
-.s-content_author p{
+.s-content_author p {
   text-align: justify;
 }
 
@@ -217,6 +217,10 @@ footer {
 }
 
 /* Contacta'ns */
+
+.contacte {
+  padding-bottom: 7.2rem;
+}
 
 /* Estils dels botons "zoom in/out" del mapa de Google*/
 #map-wrap #map-zoom-in,
@@ -316,11 +320,36 @@ footer {
   font-family: "titles";
 }
 
-.user_image_{
-  width:300px;
-  height:300px;
+.user_image {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.user_image_ {
+  width: 300px;
+  height: 300px;
   background-image: url(https://i.ytimg.com/vi/K_JlbZe5D0I/maxresdefault.jpg);
-  background-size:cover;
-  background-position:center;
-  border-radius:50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+#btn_registrarse {
+  margin-top: 20px;
+}
+
+#portada {
+  margin-bottom: 20px;
+}
+
+#cke_editor {
+  margin-bottom: 20px;
+}
+
+/* Botó pàgina login */
+.row #contrasenya {
+  margin-bottom: 20px;
 }
