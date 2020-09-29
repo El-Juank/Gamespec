@@ -1,217 +1,178 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
-    <!--Required meta tags-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="author" content="Team Gamespec" />
-    <meta
-      name="description"
-      content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, Xbox, iOS, Android i més"
-    />
-    <title>Gamespec</title>
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <!--Font Awesome CSS-->
-    <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
-    <!--CSS propis-->
-    <link rel="stylesheet" href="css/style.css" />
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!--jQuery-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <!--Scripts-->
-    <script src="js/modernizr.js"></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <section class="pageheader">
-      <header class="header">
-        <div class="header_content row">
-          <!-- Logo -->
-          <div class="header_logo">
-            <a
-              class="logo"
-              href="index.html"
-              title="Anar a la portada de Gamespec"
-            >
-              <img src="images/gamespec_logo.svg" alt="Homepage" />
-            </a>
-          </div>
-          <!-- Fi del Logo -->
-          <!-- XXSS -->
-          <ul class="header_social">
-            <li>
-              <a href="#" target="_blank" title="Vés al Facebook de Gamespec"
-                ><i class="fab fa-facebook" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Vés al Twitter de Gamespec"
-                ><i class="fab fa-twitter" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Vés al Instagram de Gamespec"
-                ><i class="fab fa-instagram" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Vés al Youtube de Gamespec"
-                ><i class="fab fa-youtube" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-          <!-- Fi de les XXSS -->
-          <!-- Botó Login -->
-          <div class="header_login">
-            <a href="#" target="_blank" title="Iniciar sessió / Registrar-se"
-              ><i class="far fa-user-circle" aria-hidden="true"></i
-            ></a>
-          </div>
-          <!-- Fi del Botó Login -->
-          <!-- Toggle Menu -->
-          <a class="header_toggle-menu" href="#" title="Menú"
-            ><span>Menu</span></a
-          >
-          <nav class="header_nav-wrap">
-            <ul class="header_nav">
-              <li><a href="#" title="">Jocs</a></li>
-              <li><a href="#" title="">Articles</a></li>
-              <li><a href="#" title="">Els nostres redactors</a></li>
-              <li><a href="#" title="">Contacta'ns</a></li>
-            </ul>
-            <a
-              href="#"
-              title="Tenca el menú"
-              class="header_overlay-close close-mobile-menu"
-              >Close</a
-            >
-          </nav>
-          <!-- Fi del Toggle Menu -->
+
+<head>
+  <!--Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="author" content="Team Gamespec" />
+  <meta name="description"
+    content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, Xbox, iOS, Android i més" />
+  <title>Gamespec</title>
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <!--Font Awesome CSS-->
+  <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
+  <!--CSS propis-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!--Scripts-->
+  <script src="js/modernizr.js"></script>
+  <script src="js/usuari_info.js"></script>
+  <style>
+    .user_image {
+      width: 40px;
+      height: 40px;
+      
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <section class="pageheader">
+    <header class="header">
+      <div class="header_content row">
+        <!-- Logo -->
+        <div class="header_logo">
+          <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+            <img src="images/gamespec_logo.svg" alt="Homepage" />
+          </a>
         </div>
-      </header>
-    </section>
-    <!-- Fi del Header -->
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <ul class="breadcrumb-content">
-        <li><a href="#">Inici</a></li>
-      </ul>
-    </div>
-    <!-- Fi del Breadcrumb -->
-    <!-- Destacats -->
-    <div class="container">
-      <div class="pageheader-content row">
-        <div class="col-full">
-          <div class="featured">
-            <div class="featured__column featured__column--big">
-              <div
-                class="entry"
-                style="
+        <!-- Fi del Logo -->
+        <!-- XXSS -->
+        <ul class="header_social">
+          <li>
+            <a href="#" target="_blank" title="Vés al Facebook de Gamespec"><i class="fab fa-facebook"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Vés al Twitter de Gamespec"><i class="fab fa-twitter"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Vés al Instagram de Gamespec"><i class="fab fa-instagram"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Vés al Youtube de Gamespec"><i class="fab fa-youtube"
+                aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <!-- Fi de les XXSS -->
+        <!-- Botó Login -->
+        <div class="header_login">
+          <a href="#"  title="Iniciar sessió / Registrar-se"><img class="user_image"
+               />
+          </a>
+        </div>
+        <!-- Fi del Botó Login -->
+        <!-- Toggle Menu -->
+        <a class="header_toggle-menu" href="#" title="Menú"><span>Menu</span></a>
+        <nav class="header_nav-wrap">
+          <ul class="header_nav">
+            <li><a href="#" title="">Jocs</a></li>
+            <li><a href="#" title="">Articles</a></li>
+            <li><a href="#" title="">Els nostres redactors</a></li>
+            <li><a href="#" title="">Contacta'ns</a></li>
+          </ul>
+          <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
+        </nav>
+        <!-- Fi del Toggle Menu -->
+      </div>
+    </header>
+  </section>
+  <!-- Fi del Header -->
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <ul class="breadcrumb-content">
+      <li><a href="#">Inici</a></li>
+    </ul>
+  </div>
+  <!-- Fi del Breadcrumb -->
+  <!-- Destacats -->
+  <div class="container">
+    <div class="pageheader-content row">
+      <div class="col-full">
+        <div class="featured">
+          <div class="featured__column featured__column--big">
+            <div class="entry" style="
                   background-image: url('images/thumbs/featured/featured-guitarman.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"><a href="#0">Music</a></span>
+                ">
+              <div class="entry_content">
+                <span class="entry_category"><a href="#0">Music</a></span>
 
-                  <h1>
-                    <a href="#0" title=""
-                      >What Your Music Preference Says About You and Your
-                      Personality.</a
-                    >
-                  </h1>
+                <h1>
+                  <a href="#0" title="">What Your Music Preference Says About You and Your
+                    Personality.</a>
+                </h1>
 
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
+                <div class="entry_info">
+                  <a href="#0" class="entry_profile-pic">
+                    <img class="avatar" src="images/avatars/user-03.jpg" alt="" />
+                  </a>
 
-                    <ul class="entry_meta">
-                      <li><a href="#0">John Doe</a></li>
-                      <li>December 29, 2017</li>
-                    </ul>
-                  </div>
+                  <ul class="entry_meta">
+                    <li><a href="#0">John Doe</a></li>
+                    <li>December 29, 2017</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured__column featured__column--small">
+            <div class="entry" style="
+                  background-image: url('images/thumbs/featured/featured-watch.jpg');
+                ">
+              <div class="entry_content">
+                <span class="entry_category"><a href="#0">Management</a></span>
+
+                <h1>
+                  <a href="#0" title="">The Pomodoro Technique Really Works.</a>
+                </h1>
+
+                <div class="entry_info">
+                  <a href="#0" class="entry_profile-pic">
+                    <img class="avatar" src="images/avatars/user-03.jpg" alt="" />
+                  </a>
+
+                  <ul class="entry_meta">
+                    <li><a href="#0">John Doe</a></li>
+                    <li>December 27, 2017</li>
+                  </ul>
                 </div>
               </div>
             </div>
 
-            <div class="featured__column featured__column--small">
-              <div
-                class="entry"
-                style="
-                  background-image: url('images/thumbs/featured/featured-watch.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"
-                    ><a href="#0">Management</a></span
-                  >
-
-                  <h1>
-                    <a href="#0" title=""
-                      >The Pomodoro Technique Really Works.</a
-                    >
-                  </h1>
-
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
-
-                    <ul class="entry_meta">
-                      <li><a href="#0">John Doe</a></li>
-                      <li>December 27, 2017</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="entry"
-                style="
+            <div class="entry" style="
                   background-image: url('images/thumbs/featured/featured-beetle.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"
-                    ><a href="#0">LifeStyle</a></span
-                  >
+                ">
+              <div class="entry_content">
+                <span class="entry_category"><a href="#0">LifeStyle</a></span>
 
-                  <h1>
-                    <a href="#0" title="">Throwback To The Good Old Days.</a>
-                  </h1>
+                <h1>
+                  <a href="#0" title="">Throwback To The Good Old Days.</a>
+                </h1>
 
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
+                <div class="entry_info">
+                  <a href="#0" class="entry_profile-pic">
+                    <img class="avatar" src="images/avatars/user-03.jpg" alt="" />
+                  </a>
 
-                    <ul class="entry_meta">
-                      <li><a href="#0">John Doe</a></li>
-                      <li>December 21, 2017</li>
-                    </ul>
-                  </div>
+                  <ul class="entry_meta">
+                    <li><a href="#0">John Doe</a></li>
+                    <li>December 21, 2017</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -219,144 +180,130 @@
         </div>
       </div>
     </div>
-    <!-- Fi dels Destacats -->
-    <!-- Articles -->
-      <section class="s-content">
-        <div class="row masonry-wrap">
-          <div class="masonry">
-            <div class="grid-sizer"></div>
-            <!-- Article prova -->
-            <article
-              class="masonry_brick entry format-standard"
-              data-aos="fade-up"
-            >
-              <div class="entry_thumb">
-                <a href="#" class="entry_thumb-link">
-                  <img src="images/posts/rocket_league-800.jpg" alt="" />
-                </a>
-              </div>
-
-              <div class="entry_text">
-                <div class="entry_header">
-                  <div class="entry_date">
-                    <a href="single-standard.html">24 de setembre, 2020</a>
-                  </div>
-                  <h1 class="entry_title">
-                    <a href="single-standard.html"
-                      >Rocket League va patir la caiguda dels seus servidors
-                      després del seu pas a free-to-play</a
-                    >
-                  </h1>
-                </div>
-                <div class="entry_excerpt">
-                  <p>
-                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                    incididunt mollit id et sit proident dolor nulla sed commodo
-                    est ad minim elit reprehenderit nisi officia aute incididunt
-                    velit sint in aliqua...
-                  </p>
-                </div>
-                <div class="entry_meta">
-                  <span class="entry_meta-links">
-                    <a href="category.html">Videojocs</a>
-                  </span>
-                </div>
-              </div>
-            </article>
-            <!-- Fi del Article prova -->
-            <!-- Article prova -->
-            <article
-              class="masonry_brick entry format-standard"
-              data-aos="fade-up"
-            >
-              <div class="entry_thumb">
-                <a href="#" class="entry_thumb-link">
-                  <img src="images/posts/rocket_league-800.jpg" alt="" />
-                </a>
-              </div>
-
-              <div class="entry_text">
-                <div class="entry_header">
-                  <div class="entry_date">
-                    <a href="single-standard.html">24 de setembre, 2020</a>
-                  </div>
-                  <h1 class="entry_title">
-                    <a href="single-standard.html"
-                      >Rocket League va patir la caiguda dels seus servidors
-                      després del seu pas a free-to-play</a
-                    >
-                  </h1>
-                </div>
-                <div class="entry_excerpt">
-                  <p>
-                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                    incididunt mollit id et sit proident dolor nulla sed commodo
-                    est ad minim elit reprehenderit nisi officia aute incididunt
-                    velit sint in aliqua...
-                  </p>
-                </div>
-                <div class="entry_meta">
-                  <span class="entry_meta-links">
-                    <a href="category.html">Videojocs</a>
-                  </span>
-                </div>
-              </div>
-            </article>
-            <!-- Fi del Article prova -->
-            <!-- Article prova -->
-            <article
-              class="masonry_brick entry format-standard"
-              data-aos="fade-up"
-            >
-              <div class="entry_thumb">
-                <a href="#" class="entry_thumb-link">
-                  <img src="images/posts/rocket_league-800.jpg" alt="" />
-                </a>
-              </div>
-
-              <div class="entry_text">
-                <div class="entry_header">
-                  <div class="entry_date">
-                    <a href="single-standard.html">24 de setembre, 2020</a>
-                  </div>
-                  <h1 class="entry_title">
-                    <a href="single-standard.html"
-                      >Rocket League va patir la caiguda dels seus servidors
-                      després del seu pas a free-to-play</a
-                    >
-                  </h1>
-                </div>
-                <div class="entry_excerpt">
-                  <p>
-                    Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                    incididunt mollit id et sit proident dolor nulla sed commodo
-                    est ad minim elit reprehenderit nisi officia aute incididunt
-                    velit sint in aliqua...
-                  </p>
-                </div>
-                <div class="entry_meta">
-                  <span class="entry_meta-links">
-                    <a href="category.html">Videojocs</a>
-                  </span>
-                </div>
-              </div>
-            </article>
-            <!-- Fi del Article prova -->
+  </div>
+  <!-- Fi dels Destacats -->
+  <!-- Articles -->
+  <section class="s-content">
+    <div class="row masonry-wrap">
+      <div class="masonry">
+        <div class="grid-sizer"></div>
+        <!-- Article prova -->
+        <article class="masonry_brick entry format-standard" data-aos="fade-up">
+          <div class="entry_thumb">
+            <a href="#" class="entry_thumb-link">
+              <img src="images/posts/rocket_league-800.jpg" alt="" />
+            </a>
           </div>
-        </div>
-      </section>
-    <!-- Fi dels Articles -->
-    <!-- Footer -->
-    <div></div>
-    <!-- Fi del Footer -->
-    <!-- Back to Top -->
-    <a id="back2Top" title="Cap amunt" href="#"
-      ><span class="fa fa-chevron-up"></span
-    ></a>
-    <!-- Fi del Back to Top -->
-    <!-- Scripts -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+
+          <div class="entry_text">
+            <div class="entry_header">
+              <div class="entry_date">
+                <a href="single-standard.html">24 de setembre, 2020</a>
+              </div>
+              <h1 class="entry_title">
+                <a href="single-standard.html">Rocket League va patir la caiguda dels seus servidors
+                  després del seu pas a free-to-play</a>
+              </h1>
+            </div>
+            <div class="entry_excerpt">
+              <p>
+                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
+                incididunt mollit id et sit proident dolor nulla sed commodo
+                est ad minim elit reprehenderit nisi officia aute incididunt
+                velit sint in aliqua...
+              </p>
+            </div>
+            <div class="entry_meta">
+              <span class="entry_meta-links">
+                <a href="category.html">Videojocs</a>
+              </span>
+            </div>
+          </div>
+        </article>
+        <!-- Fi del Article prova -->
+        <!-- Article prova -->
+        <article class="masonry_brick entry format-standard" data-aos="fade-up">
+          <div class="entry_thumb">
+            <a href="#" class="entry_thumb-link">
+              <img src="images/posts/rocket_league-800.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="entry_text">
+            <div class="entry_header">
+              <div class="entry_date">
+                <a href="single-standard.html">24 de setembre, 2020</a>
+              </div>
+              <h1 class="entry_title">
+                <a href="single-standard.html">Rocket League va patir la caiguda dels seus servidors
+                  després del seu pas a free-to-play</a>
+              </h1>
+            </div>
+            <div class="entry_excerpt">
+              <p>
+                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
+                incididunt mollit id et sit proident dolor nulla sed commodo
+                est ad minim elit reprehenderit nisi officia aute incididunt
+                velit sint in aliqua...
+              </p>
+            </div>
+            <div class="entry_meta">
+              <span class="entry_meta-links">
+                <a href="category.html">Videojocs</a>
+              </span>
+            </div>
+          </div>
+        </article>
+        <!-- Fi del Article prova -->
+        <!-- Article prova -->
+        <article class="masonry_brick entry format-standard" data-aos="fade-up">
+          <div class="entry_thumb">
+            <a href="#" class="entry_thumb-link">
+              <img src="images/posts/rocket_league-800.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="entry_text">
+            <div class="entry_header">
+              <div class="entry_date">
+                <a href="single-standard.html">24 de setembre, 2020</a>
+              </div>
+              <h1 class="entry_title">
+                <a href="single-standard.html">Rocket League va patir la caiguda dels seus servidors
+                  després del seu pas a free-to-play</a>
+              </h1>
+            </div>
+            <div class="entry_excerpt">
+              <p>
+                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
+                incididunt mollit id et sit proident dolor nulla sed commodo
+                est ad minim elit reprehenderit nisi officia aute incididunt
+                velit sint in aliqua...
+              </p>
+            </div>
+            <div class="entry_meta">
+              <span class="entry_meta-links">
+                <a href="category.html">Videojocs</a>
+              </span>
+            </div>
+          </div>
+        </article>
+        <!-- Fi del Article prova -->
+      </div>
+    </div>
+  </section>
+  <!-- Fi dels Articles -->
+  <!-- Footer -->
+  <div></div>
+  <!-- Fi del Footer -->
+  <!-- Back to Top -->
+  <a id="back2Top" title="Cap amunt" href="#"><span class="fa fa-chevron-up"></span></a>
+  <!-- Fi del Back to Top -->
+  <!-- Scripts -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+
 </html>

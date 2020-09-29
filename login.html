@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Team Gamespec" />
+    <meta name="description"
+        content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més" />
+    <title>Gamespec</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!--Font Awesome CSS-->
+    <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
+    <!--CSS propis-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!--Scripts-->
+    <script src="js/modernizr.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn_login").click(function () {
+
+                var correu = document.getElementById("correu").value;
+                var contrasenya = document.getElementById("contrasenya").value;
+
+                $.get("web_services/login.php?correu=" + correu + "&contrasenya=" + contrasenya, function (data, json) {
+
+                    var obj = $.parseJSON(data);
+                    if (obj.id > 0) {
+                        window.location.href = "./index.html"
+
+                    }
+
+                });
+            });
+
+            $("#btn_registra").click(function () {
+
+                window.location.href = "./registrarse.html"
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="pageheader">
+        <header class="header">
+            <div class="header_content row">
+                <!-- Logo -->
+                <div class="header_logo">
+                    <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+                        <img src="images/gamespec_logo.svg" alt="Homepage" />
+                    </a>
+                </div>
+                <!-- Fi del Logo -->
+                <!-- XXSS -->
+                <ul class="header_social">
+                    <li>
+                        <a href="#" target="_blank" title="Ves al Facebook de Gamespec"><i class="fab fa-facebook"
+                                aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" title="Ves al Twitter de Gamespec"><i class="fab fa-twitter"
+                                aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" title="Ves al Instagram de Gamespec"><i class="fab fa-instagram"
+                                aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" title="Ves al Youtube de Gamespec"><i class="fab fa-youtube"
+                                aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+                <!-- Fi de les XXSS -->
+                <!-- Toggle Menu -->
+                <a class="header_toggle-menu" href="#0" title="Menú"><span>Menu</span></a>
+                <nav class="header_nav-wrap">
+                    <img class="header_nav-heading header_nav-logo" src="images/gamespec_logo.svg" alt="Homepage" />
+                    <ul class="header_nav">
+                        <li><a href="#" title="">Jocs</a></li>
+                        <li><a href="#" title="">Articles</a></li>
+                        <li><a href="#" title="">Els nostres redactors</a></li>
+                        <li><a href="#" title="">Contacta'ns</a></li>
+                    </ul>
+                    <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
+                </nav>
+                <!-- Fi del Toggle Menu -->
+            </div>
+        </header>
+    </section>
+    <!-- Fi del Header -->
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <ul class="breadcrumb-content">
+            <li><a href="#">Inici</a></li>
+        </ul>
+    </div>
+    <!-- Fi del Breadcrumb -->
+    <!-- Destacats -->
+    <div class="container">
+        <div class="row">
+
+            <h3 class="add-bottom">Iniciar sesión</h3>
+
+            <form target="_blank">
+                <div>
+                    <label for="correu">Correu</label>
+                    <input class="full-width" type="email" placeholder="Correu" id="correu" name="correu">
+                    <label for="sampleInput">contrasenya</label>
+                    <input class="full-width" type="password" id="contrasenya" placeholder="Contrasenya"
+                        name="contrasenya">
+                </div>
+
+
+                <input class="btn--primary full-width" type="button" value="Iniciar sesió" id="btn_login">
+                <input class="btn--primary full-width" type="button" value="Registrar-se" id="btn_registra">
+
+            </form>
+
+
+
+        </div> <!-- end row -->
+        <!-- Fi dels Destacats -->
+        <!--Script Login-->
+
+        <!-- Scripts -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>
