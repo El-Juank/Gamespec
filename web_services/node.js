@@ -1,3 +1,9 @@
+/* ===================================================================
+ *
+ * Web services Gamespec, projecte final PiCE Girona 2020
+ *
+ * =================================================================== */
+
 var express = require("express"); //connectar la llibreria Express i es guarda en la variable espress. Es una llibreria obligatoria, sempre es necessita
 var app = express(); //Variable principal a la que se li crea una instancia de la llibreria express. Respresenta el servidor
 var mysql = require("mysql");
