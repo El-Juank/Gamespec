@@ -32,7 +32,6 @@
     <script src="js/modernizr.js"></script>
     <script src="js/usuari_info.js"></script>
   </head>
-
   <body>
     <!-- Header -->
     <section class="pageheader">
@@ -112,7 +111,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
       <ul class="breadcrumb-content">
-        <li><a href="#">Inici</a></li>
+        <li><a href="index.html">Inici</a></li>
       </ul>
     </div>
     <!-- Fi del Breadcrumb -->
@@ -121,41 +120,6 @@
       <div class="pageheader-content row">
         <div class="col-full">
           <div class="featured">
-            <div class="featured__column featured__column--big">
-              <div
-                class="entry"
-                style="
-                  background-image: url('images/thumbs/featured/featured-guitarman.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"><a href="#0">Music</a></span>
-
-                  <h1>
-                    <a href="#0" title=""
-                      >What Your Music Preference Says About You and Your
-                      Personality.</a
-                    >
-                  </h1>
-
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
-
-                    <ul class="entry_meta">
-                      <li><a href="#0">Cristiana Suyen</a></li>
-                      <li>December 29, 2017</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="featured__column featured__column--small">
               <div
                 class="entry"
@@ -229,125 +193,9 @@
     <!-- Articles -->
     <div class="articles s-content">
       <div class="row masonry-wrap">
-        <div class="masonry">
+        <!-- Aquí dins aniràn tots els articles de la BBDD -->
+        <div id="articles" class="masonry">
           <div class="grid-sizer"></div>
-          <!-- Article prova -->
-          <article
-            class="masonry_brick entry format-standard"
-            data-aos="fade-up"
-          >
-            <div class="entry_thumb">
-              <a href="#" class="entry_thumb-link">
-                <img src="images/posts/rocket_league-800.jpg" alt="" />
-              </a>
-            </div>
-
-            <div class="entry_text">
-              <div class="entry_header">
-                <div class="entry_date">
-                  <a href="single-standard.html">24 de setembre, 2020</a>
-                </div>
-                <h1 class="entry_title">
-                  <a href="single-standard.html"
-                    >Rocket League va patir la caiguda dels seus servidors
-                    després del seu pas a free-to-play</a
-                  >
-                </h1>
-              </div>
-              <div class="entry_excerpt">
-                <p>
-                  Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                  incididunt mollit id et sit proident dolor nulla sed commodo
-                  est ad minim elit reprehenderit nisi officia aute incididunt
-                  velit sint in aliqua...
-                </p>
-              </div>
-              <div class="entry_meta">
-                <span class="entry_meta-links">
-                  <a href="category.html">Videojocs</a>
-                </span>
-              </div>
-            </div>
-          </article>
-          <!-- Fi del Article prova -->
-          <!-- Article prova -->
-          <article
-            class="masonry_brick entry format-standard"
-            data-aos="fade-up"
-          >
-            <div class="entry_thumb">
-              <a href="#" class="entry_thumb-link">
-                <img src="images/posts/rocket_league-800.jpg" alt="" />
-              </a>
-            </div>
-
-            <div class="entry_text">
-              <div class="entry_header">
-                <div class="entry_date">
-                  <a href="single-standard.html">24 de setembre, 2020</a>
-                </div>
-                <h1 class="entry_title">
-                  <a href="single-standard.html"
-                    >Rocket League va patir la caiguda dels seus servidors
-                    després del seu pas a free-to-play</a
-                  >
-                </h1>
-              </div>
-              <div class="entry_excerpt">
-                <p>
-                  Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                  incididunt mollit id et sit proident dolor nulla sed commodo
-                  est ad minim elit reprehenderit nisi officia aute incididunt
-                  velit sint in aliqua...
-                </p>
-              </div>
-              <div class="entry_meta">
-                <span class="entry_meta-links">
-                  <a href="category.html">Videojocs</a>
-                </span>
-              </div>
-            </div>
-          </article>
-          <!-- Fi del Article prova -->
-          <!-- Article prova -->
-          <article
-            class="masonry_brick entry format-standard"
-            data-aos="fade-up"
-          >
-            <div class="entry_thumb">
-              <a href="#" class="entry_thumb-link">
-                <img src="images/posts/rocket_league-800.jpg" alt="" />
-              </a>
-            </div>
-
-            <div class="entry_text">
-              <div class="entry_header">
-                <div class="entry_date">
-                  <a href="single-standard.html">24 de setembre, 2020</a>
-                </div>
-                <h1 class="entry_title">
-                  <a href="single-standard.html"
-                    >Rocket League va patir la caiguda dels seus servidors
-                    després del seu pas a free-to-play</a
-                  >
-                </h1>
-              </div>
-              <div class="entry_excerpt">
-                <p>
-                  Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                  incididunt mollit id et sit proident dolor nulla sed commodo
-                  est ad minim elit reprehenderit nisi officia aute incididunt
-                  velit sint in aliqua...
-                </p>
-              </div>
-              <div class="entry_meta">
-                <span class="entry_meta-links">
-                  <a href="category.html">Videojocs</a>
-                </span>
-              </div>
-            </div>
-          </article>
-          <!-- Fi del Article prova -->
         </div>
       </div>
     </div>
@@ -437,6 +285,55 @@
       ><span class="fa fa-chevron-up"></span
     ></a>
     <!-- Fi del Back to Top -->
+    <!-- Script Principal -->
+    <script language="javascript">
+      $(function () {
+        //Mostra els destacats
+        $.get("http://localhost:3000/destacat1", function (data, status) {
+          var i = 0;
+          for (i = 0; i < data.length; i++) {
+            $(".featured").append(
+              "<div class='featured__column featured__column--big'><div class='entry' style='background-image: url('" +
+                data[i].portada +
+                "');'><div class='entry_content'><span class='entry_category'><a href='#'>Videojocs</a></span><h1><a href='#0' title=''>" +
+                data[i].articlenom +
+                "</a></h1><div class='entry_info'><a href='#' class='entry_profile-pic'><img class='avatar' src='" +
+                data[i].redactorimage +
+                "' alt='" +
+                data[i].redactornom +
+                "'/></a><ul class='entry_meta'><li><a href='#'>" +
+                data[i].redactornom +
+                "</a></li><li>" +
+                data[i].articledata +
+                "</li></ul></div></div></div></div>"
+            );
+          }
+        });
+        //Mostra la resta d'articles
+        $.get("http://localhost:3000/articlesIndex", function (data, status) {
+          var i = 0;
+          for (i = 0; i < data.length; i++) {
+            $("#articles").append(
+              "<article class='masonry_brick entry format-standard' data-aos='fade-up'>" +
+                "<div class='entry_thumb'>" +
+                "<a href='#'' class='entry_thumb-link'>" +
+                "<img src='" +
+                data[i].portada +
+                "' alt='" +
+                data[i].articlenom +
+                "' /></a></div><div class='entry_text'><div class='entry_header'><div class='entry_date'>" +
+                data[i].articledata +
+                "</div><h1 class='entry_title'><a href='#'>" +
+                data[i].articlenom +
+                "</a></h1></div><div class='entry_excerpt'><p class='article-thumb'>" +
+                data[i].articlecontigut +
+                "</p></div><div class='entry_meta'><span class='entry_meta-links'><a href='category.html'>Videojocs</a></span></div></div></article>"
+            );
+          }
+        });
+      });
+    </script>
+    <!-- Fi del Script Principal -->
     <!-- Scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
