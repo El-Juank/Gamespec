@@ -106,7 +106,7 @@ app.get("/redactors", (req, res) => {
 });
 /*-------------------------------------------------------------------------------------------------------*/
 //WS per agafar els últims articles aka "destacats" (Pàgina "index.html")
-app.get("/articles", (req, res) => {
+app.get("/destacats", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
     user: "admin_games",

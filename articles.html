@@ -133,52 +133,38 @@
     <!-- Articles -->
     <div class="articles s-content">
       <div class="row masonry-wrap">
-        <div class="masonry">
+        <!-- Aquí adins aniràn tots els articles de la BBDD -->
+        <div id="articles" class="masonry">
           <div class="grid-sizer"></div>
-          <!-- Article prova -->
-          <article
-            class="masonry_brick entry format-standard"
-            data-aos="fade-up"
-          >
-            <div class="entry_thumb">
-              <a href="#" class="entry_thumb-link">
-                <img src="images/posts/rocket_league-800.jpg" alt="" />
-              </a>
-            </div>
-
-            <div class="entry_text">
-              <div class="entry_header">
-                <div class="entry_date">
-                  <a href="single-standard.html">24 de setembre, 2020</a>
-                </div>
-                <h1 class="entry_title">
-                  <a href="single-standard.html"
-                    >Rocket League va patir la caiguda dels seus servidors
-                    després del seu pas a free-to-play</a
-                  >
-                </h1>
-              </div>
-              <div class="entry_excerpt">
-                <p>
-                  Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua
-                  incididunt mollit id et sit proident dolor nulla sed commodo
-                  est ad minim elit reprehenderit nisi officia aute incididunt
-                  velit sint in aliqua...
-                </p>
-              </div>
-              <div class="entry_meta">
-                <span class="entry_meta-links">
-                  <a href="category.html">Videojocs</a>
-                </span>
-              </div>
-            </div>
-          </article>
-          <!-- Fi del Article prova -->
-          
         </div>
       </div>
     </div>
     <!-- Fi dels Articles -->
+    <!-- Newsletter -->
+    <div class="newsletter-content container">
+      <div class="md-full end s-footer_subscribe">
+        <h4>Subscriu-te al nostre newsletter!</h4>
+
+        <div class="subscribe-form">
+          <form id="mc-form" class="group" novalidate="true">
+            <input
+              type="email"
+              value=""
+              name="EMAIL"
+              class="email"
+              id="mc-email"
+              placeholder="Correu Electònic"
+              required=""
+            />
+
+            <input type="submit" name="subscribe" value="Subscriu-te" />
+
+            <label for="mc-email" class="subscribe-message"></label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Fi del Newsletter -->
     <!-- Footer -->
     <div class="footer">
       <footer>
@@ -239,6 +225,34 @@
       ><span class="fa fa-chevron-up"></span
     ></a>
     <!-- Fi del Back to Top -->
+    <!-- Script Principal -->
+    <script language="javascript">
+      $(function () {
+        //Para hacer la función solo una vez
+        $.get("http://localhost:3000/articles", function (data, status) {
+          var i = 0;
+          for (i = 0; i < data.length; i++) {
+            $("#articles").append(
+              "<article class='masonry_brick entry format-standard' data-aos='fade-up'>" +
+                "<div class='entry_thumb'>" +
+                "<a href='#'' class='entry_thumb-link'>" +
+                "<img src='" +
+                data[i].portada +
+                "' alt='" +
+                data[i].articlenom +
+                "' /></a></div><div class='entry_text'><div class='entry_header'><div class='entry_date'>" +
+                data[i].articledata +
+                "</div><h1 class='entry_title'><a href='#'>" +
+                data[i].articlenom +
+                "</a></h1></div><div class='entry_excerpt'><p class='article-thumb'>" +
+                data[i].articlecontigut +
+                "</p></div><div class='entry_meta'><span class='entry_meta-links'><a href='category.html'>Videojocs</a></span></div></div></article>"
+            );
+          }
+        });
+      });
+    </script>
+    <!-- Fi del Script Principal -->
     <!-- Scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
