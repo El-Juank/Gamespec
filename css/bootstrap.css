@@ -328,6 +328,7 @@ p.lead {
   line-height: 1.8;
   margin-bottom: 3.6rem;
   color: #000;
+  text-align: justify;
 }
 
 @media only screen and (max-width: 800px) {

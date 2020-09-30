@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 
-/* Estils generals */
+/* General */
 
 :root {
   --colorCorp: #123abc;
@@ -38,7 +38,7 @@ p {
   font-family: "body";
 }
 
-/* Estils header */
+/* Header */
 
 .header {
   position: absolute;
@@ -75,7 +75,7 @@ p {
   color: rgba(18, 58, 188, 0.4);
 }
 
-/* Estils breadcrumb */
+/* Breadcrumb */
 
 .breadcrumb {
   margin-bottom: 30px;
