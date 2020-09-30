@@ -85,7 +85,10 @@
           <!-- Fi de les XXSS -->
           <!-- Botó Login -->
           <div class="header_login">
-            <a href="#" target="_blank" title="Iniciar sessió / Registrar-se"
+            <a
+              href="login.html"
+              target="_blank"
+              title="Iniciar sessió / Registrar-se"
               ><i class="far fa-user-circle" aria-hidden="true"></i
             ></a>
           </div>
@@ -117,17 +120,34 @@
     <div class="breadcrumb">
       <ul class="breadcrumb-content">
         <li><a href="index.html">Inici</a></li>
-        <li><a href="games.html">Jocs</a></li>
       </ul>
     </div>
     <!-- Fi del Breadcrumb -->
-    <!-- Llistat de jocs -->
-    <div class="games s-content s-content-narrow">
-      <div class="row">
-          <h1 class="s-content_header-title">Llistat de jocs</h1>
+    <!-- Newsletter -->
+    <div class="newsletter-content container">
+      <div class="md-full end s-footer_subscribe">
+        <h4>Subscriu-te al nostre newsletter!</h4>
+
+        <div class="subscribe-form">
+          <form id="mc-form" class="group" novalidate="true">
+            <input
+              type="email"
+              value=""
+              name="EMAIL"
+              class="email"
+              id="mc-email"
+              placeholder="Correu Electònic"
+              required=""
+            />
+
+            <input type="submit" name="subscribe" value="Subscriu-te" />
+
+            <label for="mc-email" class="subscribe-message"></label>
+          </form>
+        </div>
       </div>
     </div>
-    <!-- Fi del Llistat de jocs -->
+    <!-- Fi del Newsletter -->
     <!-- Footer -->
     <div class="footer">
       <footer>

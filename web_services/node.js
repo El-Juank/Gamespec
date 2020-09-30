@@ -106,6 +106,75 @@ app.get("/redactors", (req, res) => {
 });
 /*-------------------------------------------------------------------------------------------------------*/
 //WS per agafar els últims articles aka "destacats" (Pàgina "index.html")
+//WS per agafar el primer
+app.get("/destacat1", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    //Agafem l'últims article ordenat per data
+    con.query(
+      "SELECT * FROM articles INNER JOIN redactors ON articles.redactors_redactorid=redactors.redactorid ORDER BY articledata LIMIT 1",
+      function (err, result, fields) {
+        if (err) throw err;
+        res.header("Content-Type", "application/json");
+        res.json(result);
+        con.end();
+      }
+    );
+  });
+});
+//Per agafar els altres 2
+app.get("/destacats2i3", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    //Agafem els últims 2 articles ordenats per data saltant-nos el primer
+    con.query(
+      "SELECT * FROM articles ORDER BY articledata LIMIT 2 OFFSET 1",
+      function (err, result, fields) {
+        if (err) throw err;
+        res.header("Content-Type", "application/json");
+        res.json(result);
+        con.end();
+      }
+    );
+  });
+});
+/*-------------------------------------------------------------------------------------------------------*/
+//WS per agafar tots articles a exepció dels 3 primers (Pàgina "index.html")
+app.get("/articlesIndex", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    //Ens salte'm els tres primers perque ja estàn a destacats
+    con.query(
+      "SELECT * FROM articles ORDER BY articledata LIMIT 2 OFFSET 3",
+      function (err, result, fields) {
+        if (err) throw err;
+        res.header("Content-Type", "application/json");
+        res.json(result);
+        con.end();
+      }
+    );
+  });
+});
+/*-------------------------------------------------------------------------------------------------------*/
+//WS per agafar tots articles (Pàgina "articles.html")
 app.get("/articles", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -115,8 +184,7 @@ app.get("/articles", (req, res) => {
   });
   con.connect(function (err) {
     if (err) throw err;
-    //Agafem els últims 3 articles ordenats per data
-    con.query("SELECT * FROM articles ORDER BY articledata LIMIT 3", function (
+    con.query("SELECT * FROM articles ORDER BY articledata", function (
       err,
       result,
       fields
@@ -129,29 +197,6 @@ app.get("/articles", (req, res) => {
   });
 });
 /*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar tots articles (Pàgina "articles.html")
-app.get("/articles", (req, res) => {
-    var con = mysql.createConnection({
-      host: "217.61.130.155",
-      user: "admin_games",
-      password: "12345678",
-      database: "admin_games",
-    });
-    con.connect(function (err) {
-      if (err) throw err;
-      con.query("SELECT * FROM articles", function (
-        err,
-        result,
-        fields
-      ) {
-        if (err) throw err;
-        res.header("Content-Type", "application/json");
-        res.json(result);
-        con.end();
-      });
-    });
-  });
-  /*-------------------------------------------------------------------------------------------------------*/
 app.listen(3000, () => {
   //port, no volem opcions de servidor
   //no és obligatori posar-hi res

@@ -184,10 +184,47 @@ footer {
   color: #fff;
 }
 
+/* Articles */
+
+.entry_title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* Fer els paràgrafs més curts */
+.article-thumb {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número de linies */
+  -webkit-box-orient: vertical;
+}
+
+/* Fer la data més cutra */
+.entry_date {
+  width: 71px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 /* Els nostres redactors */
+
+.author-tag {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1px 35px;
+  border-radius: 10px;
+  margin: 15px;
+}
 
 .s-content_author {
   margin: 35px 0px;
+}
+
+.s-content_author-name {
+  color: var(--colorCorp);
 }
 
 .s-content_author p {
@@ -219,7 +256,7 @@ footer {
 /* Contacta'ns */
 
 .contacte {
-  padding-bottom: 7.2rem;
+  padding-bottom: 3rem;
 }
 
 /* Estils dels botons "zoom in/out" del mapa de Google*/
@@ -278,6 +315,23 @@ footer {
   margin-top: 30px;
 }
 
+/* Newsletter */
+
+.newsletter-content {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+#mc-form input[type="submit"] {
+  background: var(--colorCorp);
+  border-color: var(--colorCorp);
+}
+
+#mc-form input[type="submit"]:hover {
+  background-color: rgba(18, 58, 188, 0.4);
+  border-color: rgba(18, 58, 188, 0);
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1200px) {
@@ -315,6 +369,10 @@ footer {
 }
 
 /* Altres */
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.2) !important;
+}
 
 .entry_meta-links a {
   font-family: "titles";
