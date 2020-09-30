@@ -140,7 +140,7 @@ app.get("/destacats2i3", (req, res) => {
     if (err) throw err;
     //Agafem els últims 2 articles ordenats per data saltant-nos el primer
     con.query(
-      "SELECT * FROM articles ORDER BY articledata LIMIT 2 OFFSET 1",
+      "SELECT * FROM articles INNER JOIN redactors ON articles.redactors_redactorid=redactors.redactorid ORDER BY articledata LIMIT 2 OFFSET 1",
       function (err, result, fields) {
         if (err) throw err;
         res.header("Content-Type", "application/json");
@@ -163,7 +163,7 @@ app.get("/articlesIndex", (req, res) => {
     if (err) throw err;
     //Ens salte'm els tres primers perque ja estàn a destacats
     con.query(
-      "SELECT * FROM articles ORDER BY articledata LIMIT 2 OFFSET 3",
+      "SELECT * FROM articles ORDER BY articledata LIMIT 9 OFFSET 3",
       function (err, result, fields) {
         if (err) throw err;
         res.header("Content-Type", "application/json");

@@ -2475,7 +2475,7 @@ body.search-is-visible {
 }
 
 .featured__column--big .entry_category a {
-  background-color: #01aef0;
+  background-color: var(--colorCorp);
 }
 
 .featured__column--small {
@@ -2504,7 +2504,7 @@ body.search-is-visible {
 }
 
 .featured__column--small .entry_category a {
-  background-color: #679a23;
+  background-color: var(--colorCorp);
 }
 
 .featured__column--small .entry_profile-pic {

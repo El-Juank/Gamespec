@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ca">
-
-<head>
+  <head>
     <!--Required meta tags-->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="author" content="Team Gamespec" />
-    <meta name="description"
-        content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més" />
+    <meta
+      name="description"
+      content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més"
+    />
     <title>Gamespec</title>
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -19,119 +23,238 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
     <!--Scripts-->
     <script src="js/modernizr.js"></script>
     <script src="js/usuari_info.js"></script>
     <script>
-        $(document).ready(function () {
+      $(document).ready(function () {
         $("#iniciar_sesion").click(function () {
-      
-            var correo = document.getElementById("correo").value;
-            var contrasenya = document.getElementById("contrasenya").value;
-            
-            $.get("http://localhost:3000/get/login?correo=" + correo + "&contrasenya=" + contrasenya, function (data, json) {
-            
-               
-          
-            });
+          var correo = document.getElementById("correo").value;
+          var contrasenya = document.getElementById("contrasenya").value;
+
+          $.get(
+            "http://localhost:3000/get/login?correo=" +
+              correo +
+              "&contrasenya=" +
+              contrasenya,
+            function (data, json) {}
+          );
         });
-    });
-
+      });
     </script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- Header -->
     <section class="pageheader">
-        <header class="header">
-            <div class="header_content row">
-                <!-- Logo -->
-                <div class="header_logo">
-                    <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
-                        <img src="images/gamespec_logo.svg" alt="Homepage" />
-                    </a>
-                </div>
-                <!-- Fi del Logo -->
-                <!-- XXSS -->
-                <ul class="header_social">
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Facebook de Gamespec"><i class="fab fa-facebook"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Twitter de Gamespec"><i class="fab fa-twitter"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Instagram de Gamespec"><i class="fab fa-instagram"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Youtube de Gamespec"><i class="fab fa-youtube"
-                                aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-                <!-- Fi de les XXSS -->
-                <!-- Toggle Menu -->
-                <a class="header_toggle-menu" href="#0" title="Menú"><span>Menu</span></a>
-                <nav class="header_nav-wrap">
-                    <img class="header_nav-heading header_nav-logo" src="images/gamespec_logo.svg" alt="Homepage" />
-                    <ul class="header_nav">
-                        <li><a href="#" title="">Jocs</a></li>
-                        <li><a href="#" title="">Articles</a></li>
-                        <li><a href="#" title="">Els nostres redactors</a></li>
-                        <li><a href="#" title="">Contacta'ns</a></li>
-                    </ul>
-                    <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
-                </nav>
-                <!-- Fi del Toggle Menu -->
-            </div>
-        </header>
+      <header class="header">
+        <div class="header_content row">
+          <!-- Logo -->
+          <div class="header_logo">
+            <a
+              class="logo"
+              href="index.html"
+              title="Anar a la portada de Gamespec"
+            >
+              <img src="images/gamespec_logo.svg" alt="Homepage" />
+            </a>
+          </div>
+          <!-- Fi del Logo -->
+          <!-- XXSS -->
+          <ul class="header_social">
+            <li>
+              <a href="#" target="_blank" title="Ves al Facebook de Gamespec"
+                ><i class="fab fa-facebook" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank" title="Ves al Twitter de Gamespec"
+                ><i class="fab fa-twitter" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank" title="Ves al Instagram de Gamespec"
+                ><i class="fab fa-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" target="_blank" title="Ves al Youtube de Gamespec"
+                ><i class="fab fa-youtube" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+          <!-- Fi de les XXSS -->
+          <!-- Toggle Menu -->
+          <a class="header_toggle-menu" href="#0" title="Menú"
+            ><span>Menu</span></a
+          >
+          <nav class="header_nav-wrap">
+            <img
+              class="header_nav-heading header_nav-logo"
+              src="images/gamespec_logo.svg"
+              alt="Homepage"
+            />
+            <ul class="header_nav">
+              <li><a href="games.html" title="">Jocs</a></li>
+              <li><a href="articles.html" title="">Articles</a></li>
+              <li><a href="about.html" title="">Els nostres redactors</a></li>
+              <li><a href="contact.html" title="">Contacta'ns</a></li>
+            </ul>
+            <a
+              href="#"
+              title="Tenca el menú"
+              class="header_overlay-close close-mobile-menu"
+              >Close</a
+            >
+          </nav>
+          <!-- Fi del Toggle Menu -->
+        </div>
+      </header>
     </section>
     <!-- Fi del Header -->
     <!-- Breadcrumb -->
     <div class="breadcrumb">
-        <ul class="breadcrumb-content">
-            <li><a href="#">Inici</a></li>
-        </ul>
+      <ul class="breadcrumb-content">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="registrarse.html">Registrar-se</a></li>
+      </ul>
     </div>
     <!-- Fi del Breadcrumb -->
-    <!-- Destacats -->
     <div class="container">
-        <div class="row">
+      <div class="row">
+        <h3 class="add-bottom">Registrar-se</h3>
 
-            <h3 class="add-bottom">Registrarse</h3>
+        <form>
+          <div>
+            <label for="sampleInput">Correu</label>
+            <input
+              class="full-width"
+              type="email"
+              placeholder="Correu"
+              id="correu"
+            />
+            <label for="sampleInput">Nom</label>
+            <input class="full-width" type="text" placeholder="Nom" id="nom" />
+            <label for="sampleInput">Contrasenya</label>
+            <input
+              class="full-width"
+              type="password"
+              id="contrasenya"
+              placeholder="Contrasenya"
+            />
+            <label for="sampleInput">Repetir contrasenya</label>
+            <input
+              class="full-width"
+              type="password"
+              id="contrasenya2"
+              placeholder="Repetir contrasenya"
+            />
+          </div>
 
-            <form>
-                <div>
-                    <label for="sampleInput">Correu</label>
-                    <input class="full-width" type="email" placeholder="Correu" id="correu">
-                    <label for="sampleInput">Nom</label>
-                    <input class="full-width" type="text" placeholder="Nom" id="nom">
-                    <label for="sampleInput">Contrasenya</label>
-                    <input class="full-width" type="password" id="contrasenya" placeholder="Contrasenya">
-                    <label for="sampleInput">Repetir contrasenya</label>
-                    <input class="full-width" type="password" id="contrasenya2" placeholder="Repetir contrasenya">
-                </div>
+          <input
+            class="btn--primary full-width"
+            type="button"
+            value="Registrar-se"
+            id="btn_registrarse"
+          />
+        </form>
+      </div>
 
+      <!-- Newsletter -->
+      <div class="newsletter-content container">
+        <div class="md-full end s-footer_subscribe">
+          <h4>Subscriu-te al nostre newsletter!</h4>
 
-                <input class="btn--primary full-width" type="button" value="Registrar-se" id="btn_registrarse">
+          <div class="subscribe-form">
+            <form id="mc-form" class="group" novalidate="true">
+              <input
+                type="email"
+                value=""
+                name="EMAIL"
+                class="email"
+                id="mc-email"
+                placeholder="Correu Electònic"
+                required=""
+              />
 
+              <input type="submit" name="subscribe" value="Subscriu-te" />
+
+              <label for="mc-email" class="subscribe-message"></label>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fi del Newsletter -->
+    <!-- Footer -->
+    <div class="footer">
+      <footer>
+        <!-- Logo -->
+        <div class="footer_logo">
+          <a
+            class="logo"
+            href="index.html"
+            title="Anar a la portada de Gamespec"
+          >
+            <img src="images/gamespec_logo_white.svg" alt="Homepage" />
+          </a>
+        </div>
+        <!-- Fi del Logo -->
+        <!-- XXSS -->
+        <div class="footer_social">
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/portaldevideojuegosgamespec"
+                target="_blank"
+                title="Vés al Facebook de Gamespec"
+                ><i class="fab fa-facebook" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/Gamespec3"
+                target="_blank"
+                title="Vés al Twitter de Gamespec"
+                ><i class="fab fa-twitter" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                title="Vés al Instagram de Gamespec"
+                ><i class="fab fa-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                title="Vés al Youtube de Gamespec"
+                ><i class="fab fa-youtube" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <!-- Fi de les XXSS -->
+      </footer>
+    </div>
+    <!-- Fi del Footer -->
+    <!-- Back to Top -->
+    <a id="back2Top" title="Cap amunt" href="#"
+      ><span class="fa fa-chevron-up"></span
+    ></a>
+    <!-- Fi del Back to Top -->
 
-
-
-        </div> <!-- end row -->
-        <!-- Fi dels Destacats -->
-        <!--Script Login-->
-      
-        <!-- Scripts -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

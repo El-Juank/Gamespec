@@ -120,70 +120,14 @@
       <div class="pageheader-content row">
         <div class="col-full">
           <div class="featured">
-            <div class="featured__column featured__column--small">
-              <div
-                class="entry"
-                style="
-                  background-image: url('images/thumbs/featured/featured-watch.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"
-                    ><a href="#0">Management</a></span
-                  >
-
-                  <h1>
-                    <a href="#0" title=""
-                      >The Pomodoro Technique Really Works.</a
-                    >
-                  </h1>
-
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
-
-                    <ul class="entry_meta">
-                      <li><a href="#0">Cristiana Suyen</a></li>
-                      <li>December 27, 2017</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="entry"
-                style="
-                  background-image: url('images/thumbs/featured/featured-beetle.jpg');
-                "
-              >
-                <div class="entry_content">
-                  <span class="entry_category"><a href="#0">LifeStyle</a></span>
-
-                  <h1>
-                    <a href="#0" title="">Throwback To The Good Old Days.</a>
-                  </h1>
-
-                  <div class="entry_info">
-                    <a href="#0" class="entry_profile-pic">
-                      <img
-                        class="avatar"
-                        src="images/avatars/user-03.jpg"
-                        alt=""
-                      />
-                    </a>
-
-                    <ul class="entry_meta">
-                      <li><a href="#0">Cristiana Suyen</a></li>
-                      <li>December 21, 2017</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div id="destacat1" class="featured__column featured__column--big">
+              <!-- Fem l'append del primer destacat -->
+            </div>
+            <div
+              id="destacat2i3"
+              class="featured__column featured__column--small"
+            >
+              <!-- Fem l'append dels altres 2 destacats -->
             </div>
           </div>
         </div>
@@ -289,23 +233,45 @@
     <script language="javascript">
       $(function () {
         //Mostra els destacats
+        //Aquí mostrem el primer destacat
         $.get("http://localhost:3000/destacat1", function (data, status) {
           var i = 0;
           for (i = 0; i < data.length; i++) {
-            $(".featured").append(
-              "<div class='featured__column featured__column--big'><div class='entry' style='background-image: url('" +
+            $("#destacat1").append(
+              "<div class='entry' style='background-image: url(" +
                 data[i].portada +
-                "');'><div class='entry_content'><span class='entry_category'><a href='#'>Videojocs</a></span><h1><a href='#0' title=''>" +
+                ");'><div class='entry_content'><span class='entry_category'><a href='#'>Videojocs</a></span><h1><a href='#0' title=''>" +
                 data[i].articlenom +
                 "</a></h1><div class='entry_info'><a href='#' class='entry_profile-pic'><img class='avatar' src='" +
                 data[i].redactorimage +
                 "' alt='" +
                 data[i].redactornom +
-                "'/></a><ul class='entry_meta'><li><a href='#'>" +
+                "'/></a><ul class='entry_meta'><li><a href='about.html'>" +
                 data[i].redactornom +
-                "</a></li><li>" +
+                "</a></li><li class='featured_date'>" +
                 data[i].articledata +
-                "</li></ul></div></div></div></div>"
+                "</li></ul></div></div></div>"
+            );
+          }
+        });
+        //Aquí mostrem els altres 2
+        $.get("http://localhost:3000/destacats2i3", function (data, status) {
+          var i = 0;
+          for (i = 0; i < data.length; i++) {
+            $("#destacat2i3").append(
+              "<div class='entry' style=' background-image: url(" +
+                data[i].portada +
+                "); ' > <div class='entry_content'> <span class='entry_category' ><a href='#'>Videojocs</a></span><h1> <a href='#' title=''>" +
+                data[i].articlenom +
+                "</a > </h1><div class='entry_info'> <a href='#' class='entry_profile-pic'> <img class='avatar' src='" +
+                data[i].redactorimage +
+                "' alt='" +
+                data[i].redactornom +
+                "' /> </a><ul class='entry_meta'> <li><a href='about.html'>" +
+                data[i].redactornom +
+                "</a></li> <li class='entry_date'>" +
+                data[i].articledata +
+                "</li> </ul> </div> </div> </div>"
             );
           }
         });

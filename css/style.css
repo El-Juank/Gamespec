@@ -184,6 +184,19 @@ footer {
   color: #fff;
 }
 
+/* Index */
+
+.featured_date {
+  width: 82px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Per a una major legibilitat dels titols dels destacats*/
+.featured h1 {
+  text-shadow: 2px 2px 5px #000000;
+}
+
 /* Articles */
 
 .entry_title {
