@@ -161,7 +161,7 @@ app.get("/articlesIndex", (req, res) => {
   });
   con.connect(function (err) {
     if (err) throw err;
-    //Ens salte'm els tres primers perque ja estàn a destacats
+    //Ens salte'm els tres primers perque ja estàn a destacats, amb un limit X perque si no no funciona
     con.query(
       "SELECT * FROM articles ORDER BY articledata LIMIT 9 OFFSET 3",
       function (err, result, fields) {
