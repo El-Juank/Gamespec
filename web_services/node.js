@@ -86,25 +86,6 @@ app.get("/get/login", (req, res) => {
   });
 });
 /*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar els redactors de la web (Pàgina "about.html")
-app.get("/redactors", (req, res) => {
-  var con = mysql.createConnection({
-    host: "217.61.130.155",
-    user: "admin_games",
-    password: "12345678",
-    database: "admin_games",
-  });
-  con.connect(function (err) {
-    if (err) throw err;
-    con.query("SELECT * FROM redactors", function (err, result, fields) {
-      if (err) throw err;
-      res.header("Content-Type", "application/json");
-      res.json(result);
-      con.end();
-    });
-  });
-});
-/*-------------------------------------------------------------------------------------------------------*/
 //WS per agafar els últims articles aka "destacats" (Pàgina "index.html")
 //WS per agafar el primer
 app.get("/destacat1", (req, res) => {
@@ -196,6 +177,50 @@ app.get("/articles", (req, res) => {
     });
   });
 });
+/*-------------------------------------------------------------------------------------------------------*/
+//WS per agafar els redactors de la web (Pàgina "about.html")
+app.get("/redactors", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    con.query("SELECT * FROM redactors", function (err, result, fields) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+/*-------------------------------------------------------------------------------------------------------*/
+//WS per agafar els jocs (Pàgina "games.html")
+app.get("/games", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    //Agafar els jocs i ordenar-los alfabéticament
+    con.query("SELECT * FROM jocs INNER JOIN categories ON categories.categoriaid=jocs.categoriaid ORDER BY jocnom ASC ", function (
+      err,
+      result,
+      fields
+    ) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+
 /*-------------------------------------------------------------------------------------------------------*/
 app.listen(3000, () => {
   //port, no volem opcions de servidor

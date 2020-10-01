@@ -197,6 +197,12 @@ footer {
   text-shadow: 2px 2px 5px #000000;
 }
 
+/* Jocs */
+
+#games hr {
+  margin-bottom: 40px;
+}
+
 /* Articles */
 
 .entry_title {
@@ -350,6 +356,14 @@ footer {
 @media only screen and (max-width: 1200px) {
   .footer_social ul {
     margin: 0 43%;
+  }
+  .single-game p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número de linies */
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px;
   }
 }
 
