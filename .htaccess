@@ -1,0 +1,12 @@
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^noticia/([0-9a-zA-Z_\-áéíóúÁÉÍÓÚñÑ]+)$ noticia.php?noticia=$1
+#RewriteRule ^([0-9a-zA-Z_\-áéíóúÁÉÍÓÚñÑ]+)/?$ $1.php [NC]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+#RewriteRule ^([a-z]+)/?$ $1.html [NC]
+
+

@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="ca">
-  <head>
-    <!--Required meta tags-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="author" content="Team Gamespec" />
-    <meta
-      name="description"
-      content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més"
-    />
-    <title>Gamespec</title>
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <!--Font Awesome CSS-->
-    <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
-    <!--CSS propis-->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Estils desactivats
+
+<head>
+  <!--Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="author" content="Team Gamespec" />
+  <meta name="description"
+    content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més" />
+  <title>Gamespec</title>
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <!--Font Awesome CSS-->
+  <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
+  <!--CSS propis-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Estils desactivats
     <link rel="stylesheet" href="editor/samples/css/samples.css" />
     <link rel="stylesheet"
     href="editor/samples/toolbarconfigurator/lib/codemirror/neo.css"
     />
     -->
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!--jQuery-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <!--Scripts-->
-    <script src="js/modernizr.js"></script>
-    <script src="editor/ckeditor.js"></script>
-    <script src="editor/samples/js/sample.js"></script>
-    <!-- Script propi -->
-    <script>
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!--Scripts-->
+
+  <script src="js/modernizr.js"></script>
+  <script src="editor/ckeditor.js"></script>
+  <script src="editor/samples/js/sample.js"></script>
+
+  <!-- Script propi -->
+  <script>
+    // var editor = CKEDITOR.replace('editor');
+    
+    $(document).ready(function () {
       $("#btn_publicar").click(function () {
         var titol = document.getElementById("titol").value;
         var portada = document.getElementById("portada").value;
-        var contingut = $("#editor").html();
-        console.log(
-          "http://localhost/gamespec/web_services/insert_article.php?titol=" +
-            titol +
-            "&portada=" +
-            portada +
-            "&contingut=" +
-            contingut
-        );
+        var contingut = CKEDITOR.instances.editor.getData();
 
         $.post(
           "web_services/insert_article.php",
@@ -61,193 +51,146 @@
             contingut: contingut,
           },
           function (data, status) {
-            window.location.href = "./index.html";
+          
+          // window.location.href = "./index.html";
           }
         );
       });
-    </script>
-  </head>
+    });
 
-  <body>
-    <!-- Header -->
-    <section class="pageheader">
-      <header class="header">
-        <div class="header_content row">
-          <!-- Logo -->
-          <div class="header_logo">
-            <a
-              class="logo"
-              href="index.html"
-              title="Anar a la portada de Gamespec"
-            >
-              <img src="images/gamespec_logo.svg" alt="Homepage" />
-            </a>
-          </div>
-          <!-- Fi del Logo -->
-          <!-- XXSS -->
-          <ul class="header_social">
-            <li>
-              <a
-                href="https://www.facebook.com/portaldevideojuegosgamespec"
-                target="_blank"
-                title="Ves al Facebook de Gamespec"
-                ><i class="fab fa-facebook" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Ves al Twitter de Gamespec"
-                ><i class="fab fa-twitter" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Ves al Instagram de Gamespec"
-                ><i class="fab fa-instagram" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" target="_blank" title="Ves al Youtube de Gamespec"
-                ><i class="fab fa-youtube" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-          <!-- Fi de les XXSS -->
-          <!-- Toggle Menu -->
-          <a class="header_toggle-menu" href="#0" title="Menú"
-            ><span>Menu</span></a
-          >
-          <nav class="header_nav-wrap">
-            <img
-              class="header_nav-heading header_nav-logo"
-              src="images/gamespec_logo.svg"
-              alt="Homepage"
-            />
-            <ul class="header_nav">
-              <li><a href="games.html" title="">Jocs</a></li>
-              <li><a href="articles.html" title="">Articles</a></li>
-              <li><a href="about.html" title="">Els nostres redactors</a></li>
-              <li>
-                <a href="crear_article.html" title="">Escriure article</a>
-              </li>
-              <li><a href="contact.html" title="">Contacta'ns</a></li>
-            </ul>
-            <a
-              href="#"
-              title="Tenca el menú"
-              class="header_overlay-close close-mobile-menu"
-              >Close</a
-            >
-          </nav>
-          <!-- Fi del Toggle Menu -->
-        </div>
-      </header>
-    </section>
-    <!-- Fi del Header -->
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <ul class="breadcrumb-content">
-        <li><a href="index.html">Inici</a></li>
-        <li><a href="crear_article.html">Crear article</a></li>
-      </ul>
-    </div>
-    <!-- Fi del Breadcrumb -->
-    <!-- Editor de text -->
-    <div class="container s-content s-content-narrow">
-      <div class="row">
-        <h3 class="add-bottom">Escriure article</h3>
-        <input
-          class="full-width"
-          type="text"
-          placeholder="Titol"
-          id="titol"
-          name="Titol"
-        />
-        <input
-          class="full-width"
-          type="text"
-          placeholder="Portada"
-          id="portada"
-          name="Portada"
-        />
+  </script>
 
-        <div id="editor">
-          <h1>Hello world!</h1>
-          <p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
-        </div>
-        <input
-          class="full-width btn--primary"
-          type="button"
-          id="btn_publicar"
-          value="Publicar"
-        />
-      </div>
-    </div>
-    <!-- Fi del Editor de text -->
-    <!-- Footer -->
-    <div class="footer">
-      <footer>
+
+</head>
+
+<body>
+
+
+  <!-- Header -->
+  <section class="pageheader">
+    <header class="header">
+      <div class="header_content row">
         <!-- Logo -->
-        <div class="footer_logo">
-          <a
-            class="logo"
-            href="index.html"
-            title="Anar a la portada de Gamespec"
-          >
-            <img src="images/gamespec_logo_white.svg" alt="Homepage" />
+        <div class="header_logo">
+          <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+            <img src="images/gamespec_logo.svg" alt="Homepage" />
           </a>
         </div>
         <!-- Fi del Logo -->
         <!-- XXSS -->
-        <div class="footer_social">
-          <ul>
-            <li>
-              <a
-                href="https://www.facebook.com/portaldevideojuegosgamespec"
-                target="_blank"
-                title="Vés al Facebook de Gamespec"
-                ><i class="fab fa-facebook" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/Gamespec3"
-                target="_blank"
-                title="Vés al Twitter de Gamespec"
-                ><i class="fab fa-twitter" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                title="Vés al Instagram de Gamespec"
-                ><i class="fab fa-instagram" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                title="Vés al Youtube de Gamespec"
-                ><i class="fab fa-youtube" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
+        <ul class="header_social">
+          <li>
+            <a href="https://www.facebook.com/portaldevideojuegosgamespec" target="_blank"
+              title="Ves al Facebook de Gamespec"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Twitter de Gamespec"><i class="fab fa-twitter"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Instagram de Gamespec"><i class="fab fa-instagram"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Youtube de Gamespec"><i class="fab fa-youtube"
+                aria-hidden="true"></i></a>
+          </li>
+        </ul>
         <!-- Fi de les XXSS -->
-      </footer>
+        <!-- Toggle Menu -->
+        <a class="header_toggle-menu" href="#0" title="Menú"><span>Menu</span></a>
+        <nav class="header_nav-wrap">
+          <img class="header_nav-heading header_nav-logo" src="images/gamespec_logo.svg" alt="Homepage" />
+          <ul class="header_nav">
+            <li><a href="games.html" title="">Jocs</a></li>
+            <li><a href="articles.html" title="">Articles</a></li>
+            <li><a href="about.html" title="">Els nostres redactors</a></li>
+            <li>
+              <a href="crear_article.html" title="">Escriure article</a>
+            </li>
+            <li><a href="contact.html" title="">Contacta'ns</a></li>
+          </ul>
+          <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
+        </nav>
+        <!-- Fi del Toggle Menu -->
+      </div>
+    </header>
+  </section>
+  <!-- Fi del Header -->
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <ul class="breadcrumb-content">
+      <li><a href="index.html">Inici</a></li>
+      <li><a href="crear_article.html">Crear article</a></li>
+    </ul>
+  </div>
+  <!-- Fi del Breadcrumb -->
+  <!-- Editor de text -->
+  <div class="container s-content s-content-narrow">
+    <div class="row">
+      <h3 class="add-bottom">Escriure article</h3>
+      <input class="full-width" type="text" placeholder="Titol" id="titol" name="Titol" />
+      <input class="full-width" type="text" placeholder="Portada" id="portada" name="Portada" />
+
+      <textarea id="editor"></textarea>
+      <div id="preview"></div>
+      <input class="full-width btn--primary" type="button" id="btn_publicar" value="Publicar" />
     </div>
-    <!-- Fi del Footer -->
-    <!-- Back to Top -->
-    <a id="back2Top" title="Cap amunt" href="#"
-      ><span class="fa fa-chevron-up"></span
-    ></a>
-    <!-- Fi del Back to Top -->
-    <!-- Scripts -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      initSample();
-    </script>
-  </body>
+  </div>
+  <!-- Fi del Editor de text -->
+  <!-- Footer -->
+  <div class="footer">
+    <footer>
+      <!-- Logo -->
+      <div class="footer_logo">
+        <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+          <img src="images/gamespec_logo_white.svg" alt="Homepage" />
+        </a>
+      </div>
+      <!-- Fi del Logo -->
+      <!-- XXSS -->
+      <div class="footer_social">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/portaldevideojuegosgamespec" target="_blank"
+              title="Vés al Facebook de Gamespec"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Gamespec3" target="_blank" title="Vés al Twitter de Gamespec"><i
+                class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com" target="_blank" title="Vés al Instagram de Gamespec"><i
+                class="fab fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com" target="_blank" title="Vés al Youtube de Gamespec"><i
+                class="fab fa-youtube" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!-- Fi de les XXSS -->
+    </footer>
+  </div>
+  <!-- Fi del Footer -->
+  <!-- Back to Top -->
+  <a id="back2Top" title="Cap amunt" href="#"><span class="fa fa-chevron-up"></span></a>
+  <!-- Fi del Back to Top -->
+  <!-- Scripts -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    initSample();
+  </script>
+  <script>
+    CKEDITOR.editorConfig = function (config) {
+      config.language = 'en';
+      config.uiColor = '#37e107';
+      config.height = 300;
+      config.toolbarCanCollapse = true;
+    };
+  </script>
+</body>
+
 </html>
