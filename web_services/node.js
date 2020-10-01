@@ -14,7 +14,9 @@ app.get("/", (req, res) => {
   //operativa i resposta, per exemple connectar una base de dades i fer un select per recollir les dades
   res.send("El web service està operatiu!"); //Aqui es connectara amb una base de dades en JSON
 });
-//WS Per afegir usuaris
+
+/* WS Per afegir usuaris 
+ * -------------------------------------------------------------------------------------------------------*/
 app.get("/insert/user", (req, res) => {
   var mysql = require("mysql");
 
@@ -45,8 +47,9 @@ app.get("/insert/user", (req, res) => {
     });
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per iniciar sessió
+
+/* WS per iniciar sessió
+ * -------------------------------------------------------------------------------------------------------*/
 app.get("/get/login", (req, res) => {
   var mysql = require("mysql");
 
@@ -85,8 +88,9 @@ app.get("/get/login", (req, res) => {
     );
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar els últims articles aka "destacats" (Pàgina "index.html")
+
+/* WS per agafar els últims articles aka "destacats" (Pàgina "index.html")
+ * -------------------------------------------------------------------------------------------------------*/
 //WS per agafar el primer
 app.get("/destacat1", (req, res) => {
   var con = mysql.createConnection({
@@ -131,8 +135,9 @@ app.get("/destacats2i3", (req, res) => {
     );
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar tots articles a exepció dels 3 primers (Pàgina "index.html")
+
+/* WS per agafar tots articles a exepció dels 3 primers (Pàgina "index.html")
+ * -------------------------------------------------------------------------------------------------------*/
 app.get("/articlesIndex", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -154,8 +159,10 @@ app.get("/articlesIndex", (req, res) => {
     );
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar tots articles (Pàgina "articles.html")
+
+/* WS per agafar tots articles (Pàgina "articles.html")
+ * -------------------------------------------------------------------------------------------------------*/
+
 app.get("/articles", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -196,8 +203,9 @@ app.get("/redactors", (req, res) => {
     });
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar els jocs (Pàgina "games.html")
+
+/* WS per agafar els jocs (Pàgina "games.html")
+ * -------------------------------------------------------------------------------------------------------*/
 app.get("/games", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -221,7 +229,6 @@ app.get("/games", (req, res) => {
   });
 });
 
-/*-------------------------------------------------------------------------------------------------------*/
 app.listen(3000, () => {
   //port, no volem opcions de servidor
   //no és obligatori posar-hi res

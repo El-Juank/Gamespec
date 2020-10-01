@@ -4,7 +4,8 @@
  *
  * =================================================================== */
 
-/* Fonts */
+/* Fonts
+ * ----------------------------------------------------- */
 
 @font-face {
   font-family: "titles";
@@ -20,7 +21,8 @@
   font-weight: bold;
 }
 
-/* General */
+/* General
+ * ----------------------------------------------------- */
 
 :root {
   --colorCorp: #123abc;
@@ -38,7 +40,8 @@ p {
   font-family: "body";
 }
 
-/* Header */
+/* Header
+ * ----------------------------------------------------- */
 
 .header {
   position: absolute;
@@ -75,7 +78,8 @@ p {
   color: rgba(18, 58, 188, 0.4);
 }
 
-/* Breadcrumb */
+/* Breadcrumb
+ * ----------------------------------------------------- */
 
 .breadcrumb {
   margin-bottom: 30px;
@@ -114,7 +118,8 @@ ul.breadcrumb-content li a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* Footer
+ * ----------------------------------------------------- */
 
 footer {
   padding-top: 60px;
@@ -157,7 +162,8 @@ footer {
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* back2Top */
+/* back2Top
+ * ----------------------------------------------------- */
 
 #back2Top {
   width: 50px;
@@ -184,7 +190,8 @@ footer {
   color: #fff;
 }
 
-/* Index */
+/* Index
+ * ----------------------------------------------------- */
 
 .featured_date {
   width: 82px;
@@ -197,13 +204,23 @@ footer {
   text-shadow: 2px 2px 5px #000000;
 }
 
-/* Jocs */
+/* Jocs
+ * ----------------------------------------------------- */
 
 #games hr {
   margin-bottom: 40px;
 }
 
-/* Articles */
+.single-game p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número de linies */
+  -webkit-box-orient: vertical;
+}
+
+/* Articles
+ * ----------------------------------------------------- */
 
 .entry_title {
   overflow: hidden;
@@ -229,7 +246,8 @@ footer {
   overflow: hidden;
 }
 
-/* Els nostres redactors */
+/* Els nostres redactors
+ * ----------------------------------------------------- */
 
 .author-tag {
   background-color: rgba(0, 0, 0, 0.1);
@@ -272,7 +290,8 @@ footer {
   color: rgba(18, 58, 188, 0.4);
 }
 
-/* Contacta'ns */
+/* Contacta'ns
+ * ----------------------------------------------------- */
 
 .contacte {
   padding-bottom: 3rem;
@@ -334,7 +353,8 @@ footer {
   margin-top: 30px;
 }
 
-/* Newsletter */
+/* Newsletter
+ * ----------------------------------------------------- */
 
 .newsletter-content {
   margin-top: 5rem;
@@ -351,7 +371,8 @@ footer {
   border-color: rgba(18, 58, 188, 0);
 }
 
-/* Media Queries */
+/* Media Queries
+ * ----------------------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
   .footer_social ul {
@@ -361,7 +382,7 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Número de linies */
+    -webkit-line-clamp: 2; /* Número de linies */
     -webkit-box-orient: vertical;
     margin-bottom: 15px;
   }
@@ -395,7 +416,8 @@ footer {
   }
 }
 
-/* Altres */
+/* Altres
+ * ----------------------------------------------------- */
 
 ::placeholder {
   color: rgba(0, 0, 0, 0.2) !important;

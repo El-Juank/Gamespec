@@ -347,14 +347,6 @@ b {
   font-weight: normal;
 }
 
-em,
-i {
-}
-
-strong,
-b {
-}
-
 small {
   font-size: 1.2rem;
   line-height: inherit;
@@ -2447,7 +2439,7 @@ body.search-is-visible {
 .featured .entry_meta li::after {
   content: "\2022";
   margin-left: 9px;
-  margin-right: 6px;
+  margin-right: 9px;
 }
 
 .featured .entry_meta li:last-child::after {
@@ -3027,9 +3019,11 @@ html.no-csstransitions .featured {
   .s-extra .top {
     max-width: 900px;
   }
+  /*
+  Per mostrar només 5 jocs
   .s-extra .games_posts article:nth-child(n + 5) {
     display: none;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 1000px) {
@@ -3757,9 +3751,6 @@ footer h4::after {
 
 .comment__meta time {
   margin-right: 12px;
-}
-
-.comment__meta .reply {
 }
 
 .comment__text {

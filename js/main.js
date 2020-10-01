@@ -9,8 +9,7 @@
 
   var cfg = {
       scrollDuration: 800, // smoothscroll duration
-      mailChimpURL:
-        "https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc", // mailchimp url
+      mailChimpURL: "", // mailchimp url
     },
     $WIN = $(window);
 
@@ -19,18 +18,13 @@
   var doc = document.documentElement;
   doc.setAttribute("data-useragent", navigator.userAgent);
 
-  // svg fallback
-  if (!Modernizr.svg) {
-    $(".header_logo img").attr("src", "images/logo.png");
-  }
-
   /* Preloader
    * ----------------------------------------------------- */
   var clPreloader = function () {
     $WIN.on("load", function () {});
   };
 
-  /* mediaelement
+  /* MediaElement
    * ------------------------------------------------------ */
   var clMediaElement = function () {
     $("audio").mediaelementplayer({
@@ -45,7 +39,7 @@
     $(".video-container").fitVids();
   };
 
-  /* pretty print
+  /* Pretty Print
    * -------------------------------------------------- */
   var clPrettyPrint = function () {
     $("pre").addClass("prettyprint");
@@ -54,54 +48,7 @@
     });
   };
 
-  /* search
-   * ------------------------------------------------------ */
-  var clSearch = function () {
-    var searchWrap = $(".header_search"),
-      searchField = searchWrap.find(".search-field"),
-      closeSearch = searchWrap.find(".header_overlay-close"),
-      searchTrigger = $(".header_search-trigger"),
-      siteBody = $("body");
-
-    searchTrigger.on("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      var $this = $(this);
-
-      siteBody.addClass("search-is-visible");
-      setTimeout(function () {
-        searchWrap.find(".search-field").focus();
-      }, 100);
-    });
-
-    closeSearch.on("click", function (e) {
-      var $this = $(this);
-
-      e.stopPropagation();
-
-      if (siteBody.hasClass("search-is-visible")) {
-        siteBody.removeClass("search-is-visible");
-        setTimeout(function () {
-          searchWrap.find(".search-field").blur();
-        }, 100);
-      }
-    });
-
-    searchWrap.on("click", function (e) {
-      if (!$(e.target).is(".search-field")) {
-        closeSearch.trigger("click");
-      }
-    });
-
-    searchField.on("click", function (e) {
-      e.stopPropagation();
-    });
-
-    searchField.attr({ placeholder: "Type Keywords", autocomplete: "off" });
-  };
-
-  /* Mobile Menu
+  /* Menú per a mòbils/pantalles petites
    * ---------------------------------------------------- */
   var clMobileMenu = function () {
     var navWrap = $(".header_nav-wrap"),
@@ -128,8 +75,7 @@
       }
     });
 
-    // open (or close) submenu items in mobile view menu.
-    // close all the other open submenu items.
+    // Obrir (o tancar) el menú
     $(".header_nav .has-children")
       .children("a")
       .on("click", function (e) {
@@ -151,7 +97,7 @@
       });
   };
 
-  /* Masonry
+  /* Masonry aka "Quadrícula"
    * ---------------------------------------------------- */
   var clMasonryFolio = function () {
     var containerBricks = $(".masonry");
@@ -164,7 +110,7 @@
       });
     });
 
-    // layout Masonry after each image loads
+    // ajustar la quadrícula després de carregar cada imatge
     containerBricks.imagesLoaded().progress(function () {
       containerBricks.masonry("layout");
     });
@@ -214,7 +160,7 @@
         )
         .promise()
         .done(function () {
-          // check if menu is open
+          // Comprova si el menú està obert
           if ($("body").hasClass("menu-is-open")) {
             $(".header-menu-toggle").trigger("click");
           }
@@ -283,51 +229,46 @@
 
   /* Back2Top
    * ------------------------------------------------------ */
-
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     var height = $(window).scrollTop();
     if (height > 100) {
-        $('#back2Top').fadeIn();
+      $("#back2Top").fadeIn();
     } else {
-        $('#back2Top').fadeOut();
+      $("#back2Top").fadeOut();
     }
-});
-$(document).ready(function() {
-    $("#back2Top").click(function(event) {
-        event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
+  });
+  $(document).ready(function () {
+    $("#back2Top").click(function (event) {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
     });
+  });
 
-});
-
-  /* Map
+  /* Mapa amb Google Maps
    * ------------------------------------------------------ */
-
-  // add custom buttons for the zoom-in/zoom-out on the map
+  // Possem botons personalitzats per fer zoom in/out
   var clCustomZoomControl = function (controlDiv, map) {
-    // grap the zoom elements from the DOM and insert them in the map
     var controlUIzoomIn = document.getElementById("map-zoom-in"),
       controlUIzoomOut = document.getElementById("map-zoom-out");
 
     controlDiv.appendChild(controlUIzoomIn);
     controlDiv.appendChild(controlUIzoomOut);
 
-    // Setup the click event listeners and zoom-in or out according to the clicked element
+    // Configureu els botons per fer zoom in o zoom out
     google.maps.event.addDomListener(controlUIzoomIn, "click", function () {
-      map.setZoom(map.getZoom() + 1);
+      map.setZoom(map.getZoom() + 1); // Zoom in
     });
     google.maps.event.addDomListener(controlUIzoomOut, "click", function () {
-      map.setZoom(map.getZoom() - 1);
+      map.setZoom(map.getZoom() - 1); // Zoom out
     });
   };
 
   var clGoogleMap = function () {
     if (typeof google === "object" && typeof google.maps === "object") {
-
       var latitude = 41.984795,
-        longitude = 2.811250,
-        //Latitud i longitud de la Fira de Girona
+        longitude = 2.81125,
+        // Latitud i longitud de la Fira de Girona
         map_zoom = 14,
         main_color = "#0054a5",
         saturation_value = -30,
@@ -335,17 +276,17 @@ $(document).ready(function() {
         marker_url = null,
         winWidth = $(window).width();
 
-      // show controls
+      // Fem els botons de zoom in/out visibles
       $("#map-zoom-in, #map-zoom-out").show();
 
-      // marker url
+      // Marque'm l'ubicació amb una icona
       if (winWidth > 480) {
         marker_url = "images/icon-location@2x.png";
       } else {
         marker_url = "images/icon-location.png";
       }
 
-      // map style
+      // Estils
       var style = [
         {
           // set saturation for the labels on the map
@@ -539,13 +480,12 @@ $(document).ready(function() {
     }
   };
 
-  /* Initialize
+  /* Preparar els scripts
    * ------------------------------------------------------ */
   (function ssInit() {
     clPreloader();
     clMediaElement();
     clPrettyPrint();
-    clSearch();
     clMobileMenu();
     clMasonryFolio();
     clSlickSlider();
