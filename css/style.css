@@ -134,6 +134,7 @@ footer {
   height: 48px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 6rem;
 }
 
 .footer_social {
@@ -264,7 +265,7 @@ footer {
   color: var(--colorCorp);
 }
 
-.s-content_author-name{
+.s-content_author-name {
   transition: all 0.3s ease-in-out;
 }
 
@@ -399,6 +400,13 @@ footer {
 /* Media Queries
  * ----------------------------------------------------- */
 
+@media only screen and (min-width: 1200px) {
+  /* Per fer els li dels footer més llargs */
+  .s-footer_linklist li {
+    width: 150px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .footer_social ul {
     margin: 0 43%;
@@ -413,6 +421,9 @@ footer {
   }
   .about article {
     margin-bottom: 0px !important;
+  }
+  .about h5 {
+    width: 350px;
   }
 }
 
