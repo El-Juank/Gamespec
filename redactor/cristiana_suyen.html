@@ -12,7 +12,7 @@
       name="description"
       content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, Xbox, iOS, Android i més"
     />
-    <title>Musta Essousy | Gamespec</title>
+    <title>Cristiana Suyen | Gamespec</title>
     <!--Favicon-->
     <link
       rel="shortcut icon"
@@ -127,7 +127,7 @@
       <ul class="breadcrumb-content">
         <li><a href="../index.html">Inici</a></li>
         <li><a href="../about.html">Els nostres redactors</a></li>
-        <li><a href="musta_essousy.html">Musta Essousy</a></li>
+        <li><a href="cristiana_suyen.html">Cristiana Suyen</a></li>
       </ul>
     </div>
     <!-- Fi del Breadcrumb -->
@@ -243,30 +243,30 @@
         //Mostrar la targeta del redactor
         $.get("http://localhost:3000/redactors", function (data, status) {
           var facebook = "";
-          if (data[0].redactorfacebook == null) {
+          if (data[2].redactorfacebook == null) {
             facebook = "&nbsp;";
           } else {
             facebook =
               "<li><a href='" +
-              data[0].redactorfacebook +
+              data[2].redactorfacebook +
               "' target='_blank'>Facebook</a></li>";
           }
           var twitter = "";
-          if (data[0].redactortwitter == null) {
+          if (data[2].redactortwitter == null) {
             twitter = "&nbsp;";
           } else {
             twitter =
               "<li><a href='" +
-              data[0].redactortwitter +
+              data[2].redactortwitter +
               "' target='_blank'>Twitter</a></li>";
           }
           var instagram = "";
-          if (data[0].redactorinstagram == null) {
+          if (data[2].redactorinstagram == null) {
             instagram = "&nbsp;";
           } else {
             instagram =
               "<li><a href='" +
-              data[0].redactorinstagram +
+              data[2].redactorinstagram +
               "' target='_blank'>Instagram</a></li>";
           }
 
@@ -274,16 +274,16 @@
             "<div class='author-tag'>" +
               "<div class='s-content_author'>" +
               "<img src='" +
-              data[0].redactorimage +
+              data[2].redactorimage +
               "' alt='Imatge de " +
-              data[0].redactornom +
+              data[2].redactornom +
               "' />" +
               "<div class='s-content_author-about'>" +
               "<h4 class='s-content_author-name'>" +
-              data[0].redactornom +
+              data[2].redactornom +
               "</h4>" +
               "<p>" +
-              data[0].redactordescripcio +
+              data[2].redactordescripcio +
               "</p>" +
               "<ul class='author-social'>" +
               facebook +
@@ -293,7 +293,7 @@
           );
         });
         //Mostrar els articles d'aquest redactor en particular
-        $.get("http://localhost:3000/articlesMusta", function (data, status) {
+        $.get("http://localhost:3000/articlesCris", function (data, status) {
           var i = 0;
           for (i = 0; i < data.length; i++) {
             $("#articles-redactor").append(

@@ -258,16 +258,20 @@
 
             $("#authors").append(
               "<div class='author-tag'>" +
-              "<div class='s-content_author'>" +
+                "<div class='s-content_author'>" +
                 "<img src='" +
                 data[i].redactorimage +
                 "' alt='Imatge de " +
                 data[i].redactornom +
                 "' />" +
                 "<div class='s-content_author-about'>" +
+                "<a href='" +
+                data[i].redactorlink +
+                "'>" +
                 "<h4 class='s-content_author-name'>" +
                 data[i].redactornom +
                 "</h4>" +
+                "</a>" +
                 "<p>" +
                 data[i].redactordescripcio +
                 "</p>" +

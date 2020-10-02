@@ -123,10 +123,7 @@
             <div id="destacat1" class="featured_column featured_column-big">
               <!-- Fem l'append del primer destacat -->
             </div>
-            <div
-              id="destacat2i3"
-              class="featured_column featured_column-small"
-            >
+            <div id="destacat2i3" class="featured_column featured_column-small">
               <!-- Fem l'append dels altres 2 destacats -->
             </div>
           </div>
@@ -246,7 +243,9 @@
                 data[i].redactorimage +
                 "' alt='" +
                 data[i].redactornom +
-                "'/></a><ul class='entry_meta'><li><a href='about.html'>" +
+                "'/></a><ul class='entry_meta'><li><a href='" +
+                data[i].redactorlink +
+                "'>" +
                 data[i].redactornom +
                 "</a></li><li class='featured_date'>" +
                 data[i].articledata +
@@ -267,7 +266,9 @@
                 data[i].redactorimage +
                 "' alt='" +
                 data[i].redactornom +
-                "' /> </a><ul class='entry_meta'> <li><a href='about.html'>" +
+                "' /> </a><ul class='entry_meta'> <li><a href='" +
+                data[i].redactorlink +
+                "'>" +
                 data[i].redactornom +
                 "</a></li> <li class='entry_date'>" +
                 data[i].articledata +
