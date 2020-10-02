@@ -101,7 +101,7 @@ app.get("/destacat1", (req, res) => {
   });
   con.connect(function (err) {
     if (err) throw err;
-    //Agafem l'últims article ordenat per data
+    //Agafem l'últim article ordenat per data
     con.query(
       "SELECT * FROM articles INNER JOIN redactors ON articles.redactors_redactorid=redactors.redactorid ORDER BY articledata LIMIT 1",
       function (err, result, fields) {
@@ -113,7 +113,7 @@ app.get("/destacat1", (req, res) => {
     );
   });
 });
-//Per agafar els altres 2
+//WS per agafar els altres 2
 app.get("/destacats2i3", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -147,7 +147,7 @@ app.get("/articlesIndex", (req, res) => {
   });
   con.connect(function (err) {
     if (err) throw err;
-    //Ens salte'm els tres primers perque ja estàn a destacats, amb un limit X perque si no no funciona
+    //Ens saltem els tres primers perque ja estàn a destacats, amb un limit X perque si no no funciona
     con.query(
       "SELECT * FROM articles ORDER BY articledata LIMIT 9 OFFSET 3",
       function (err, result, fields) {
@@ -162,7 +162,6 @@ app.get("/articlesIndex", (req, res) => {
 
 /* WS per agafar tots articles (Pàgina "articles.html")
  * -------------------------------------------------------------------------------------------------------*/
-
 app.get("/articles", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",
@@ -184,8 +183,84 @@ app.get("/articles", (req, res) => {
     });
   });
 });
-/*-------------------------------------------------------------------------------------------------------*/
-//WS per agafar els redactors de la web (Pàgina "about.html")
+
+/* WS per agafar els articles de cada redactor (Pàgina "redactor/nom_redactor.html")
+ * -------------------------------------------------------------------------------------------------------*/
+//Articles de'n Musta
+app.get("/articlesMusta", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    con.query("SELECT * FROM articles WHERE redactors_redactorid='1' ORDER BY articledata", function (err, result, fields) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+//Articles de'n Juan
+app.get("/articlesJuan", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    con.query("SELECT * FROM articles WHERE redactors_redactorid='2' ORDER BY articledata", function (err, result, fields) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+//Articles de la Cris
+app.get("/articlesCris", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    con.query("SELECT * FROM articles WHERE redactors_redactorid='3' ORDER BY articledata", function (err, result, fields) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+//Articles de'n Néstor
+app.get("/articlesNestor", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    con.query("SELECT * FROM articles WHERE redactors_redactorid='4' ORDER BY articledata", function (err, result, fields) {
+      if (err) throw err;
+      res.header("Content-Type", "application/json");
+      res.json(result);
+      con.end();
+    });
+  });
+});
+
+/* WS per agafar els redactors de la web (Pàgina "about.html")
+ * -------------------------------------------------------------------------------------------------------*/
 app.get("/redactors", (req, res) => {
   var con = mysql.createConnection({
     host: "217.61.130.155",

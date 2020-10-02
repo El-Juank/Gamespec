@@ -12,16 +12,20 @@
       name="description"
       content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, Xbox, iOS, Android i més"
     />
-    <title>Els nostres redactors | Gamespec</title>
+    <title>Cristiana Suyen | Gamespec</title>
     <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
     <!--Font Awesome CSS-->
-    <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome/css/all.min.css" rel="stylesheet" />
     <!--CSS propis-->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
     <!--jQuery-->
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -29,7 +33,7 @@
       crossorigin="anonymous"
     ></script>
     <!--Scripts-->
-    <script src="js/modernizr.js"></script>
+    <script src="../js/modernizr.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -40,10 +44,10 @@
           <div class="header_logo">
             <a
               class="logo"
-              href="index.html"
+              href="../index.html"
               title="Anar a la portada de Gamespec"
             >
-              <img src="images/gamespec_logo.svg" alt="Homepage" />
+              <img src="../images/gamespec_logo.svg" alt="Homepage" />
             </a>
           </div>
           <!-- Fi del Logo -->
@@ -86,7 +90,7 @@
           <!-- Botó Login -->
           <div class="header_login">
             <a
-              href="login.html"
+              href="../login.html"
               target="_blank"
               title="Iniciar sessió / Registrar-se"
               ><i class="far fa-user-circle" aria-hidden="true"></i
@@ -99,10 +103,12 @@
           >
           <nav class="header_nav-wrap">
             <ul class="header_nav">
-              <li><a href="games.html" title="">Jocs</a></li>
-              <li><a href="articles.html" title="">Articles</a></li>
-              <li><a href="about.html" title="">Els nostres redactors</a></li>
-              <li><a href="contact.html" title="">Contacta'ns</a></li>
+              <li><a href="../games.html" title="">Jocs</a></li>
+              <li><a href="../articles.html" title="">Articles</a></li>
+              <li>
+                <a href="../about.html" title="">Els nostres redactors</a>
+              </li>
+              <li><a href="../contact.html" title="">Contacta'ns</a></li>
             </ul>
             <a
               href="#"
@@ -119,8 +125,9 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
       <ul class="breadcrumb-content">
-        <li><a href="index.html">Inici</a></li>
-        <li><a href="about.html">Els nostres redactors</a></li>
+        <li><a href="../index.html">Inici</a></li>
+        <li><a href="../about.html">Els nostres redactors</a></li>
+        <li><a href="cristiana_suyen.html">Cristiana Suyen</a></li>
       </ul>
     </div>
     <!-- Fi del Breadcrumb -->
@@ -131,6 +138,15 @@
         <!-- Llistat de redactors -->
         <div id="authors" class="container">
           <!-- Aquí adins aniran tots els redactors de la BBDD mitjançant el javascript de més assota -->
+        </div>
+        <h2 class="s-content_header-subtitle">Articles publicats</h2>
+        <div class="s-extra articles-redactor">
+            <div class="col-full md-six tab-full">
+              <div id="articles-redactor" class="block-1-2 block-m-full">
+                <!-- Aquí farem l'append amb els jocs -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -168,10 +184,10 @@
         <div class="footer_logo">
           <a
             class="logo"
-            href="index.html"
+            href="../index.html"
             title="Anar a la portada de Gamespec"
           >
-            <img src="images/gamespec_logo_white.svg" alt="Homepage" />
+            <img src="../images/gamespec_logo_white.svg" alt="Homepage" />
           </a>
         </div>
         <!-- Fi del Logo -->
@@ -224,62 +240,72 @@
     <!-- Script Principal -->
     <script language="javascript">
       $(function () {
-        //Para hacer la función solo una vez
+        //Mostrar la targeta del redactor
         $.get("http://localhost:3000/redactors", function (data, status) {
+          var facebook = "";
+          if (data[2].redactorfacebook == null) {
+            facebook = "&nbsp;";
+          } else {
+            facebook =
+              "<li><a href='" +
+              data[2].redactorfacebook +
+              "' target='_blank'>Facebook</a></li>";
+          }
+          var twitter = "";
+          if (data[2].redactortwitter == null) {
+            twitter = "&nbsp;";
+          } else {
+            twitter =
+              "<li><a href='" +
+              data[2].redactortwitter +
+              "' target='_blank'>Twitter</a></li>";
+          }
+          var instagram = "";
+          if (data[2].redactorinstagram == null) {
+            instagram = "&nbsp;";
+          } else {
+            instagram =
+              "<li><a href='" +
+              data[2].redactorinstagram +
+              "' target='_blank'>Instagram</a></li>";
+          }
+
+          $("#authors").append(
+            "<div class='author-tag'>" +
+              "<div class='s-content_author'>" +
+              "<img src='" +
+              data[2].redactorimage +
+              "' alt='Imatge de " +
+              data[2].redactornom +
+              "' />" +
+              "<div class='s-content_author-about'>" +
+              "<h4 class='s-content_author-name'>" +
+              data[2].redactornom +
+              "</h4>" +
+              "<p>" +
+              data[2].redactordescripcio +
+              "</p>" +
+              "<ul class='author-social'>" +
+              facebook +
+              twitter +
+              instagram +
+              "</ul></div></div></div>"
+          );
+        });
+        //Mostrar els articles d'aquest redactor en particular
+        $.get("http://localhost:3000/articlesCris", function (data, status) {
           var i = 0;
           for (i = 0; i < data.length; i++) {
-            var facebook = "";
-            if (data[i].redactorfacebook == null) {
-              facebook = "&nbsp;";
-            } else {
-              facebook =
-                "<li><a href='" +
-                data[i].redactorfacebook +
-                "' target='_blank'>Facebook</a></li>";
-            }
-            var twitter = "";
-            if (data[i].redactortwitter == null) {
-              twitter = "&nbsp;";
-            } else {
-              twitter =
-                "<li><a href='" +
-                data[i].redactortwitter +
-                "' target='_blank'>Twitter</a></li>";
-            }
-            var instagram = "";
-            if (data[i].redactorinstagram == null) {
-              instagram = "&nbsp;";
-            } else {
-              instagram =
-                "<li><a href='" +
-                data[i].redactorinstagram +
-                "' target='_blank'>Instagram</a></li>";
-            }
-
-            $("#authors").append(
-              "<div class='author-tag'>" +
-                "<div class='s-content_author'>" +
-                "<img src='" +
-                data[i].redactorimage +
-                "' alt='Imatge de " +
-                data[i].redactornom +
-                "' />" +
-                "<div class='s-content_author-about'>" +
-                "<a href='" +
-                data[i].redactorlink +
-                "'>" +
-                "<h4 class='s-content_author-name'>" +
-                data[i].redactornom +
-                "</h4>" +
-                "</a>" +
-                "<p>" +
-                data[i].redactordescripcio +
-                "</p>" +
-                "<ul class='author-social'>" +
-                facebook +
-                twitter +
-                instagram +
-                "</ul></div></div></div>"
+            $("#articles-redactor").append(
+              "<article class='single-game col-block games_post'><a href='#' class='games_thumb'><img src='" +
+                data[i].portada +
+                "' alt='" +
+                data[i].articlenom +
+                "'/></a><h5><a href='#'>" +
+                data[i].articlenom +
+                "</a></h5><p>" +
+                data[i].articleresum +
+                "</p></article><hr>"
             );
           }
         });
@@ -287,8 +313,8 @@
     </script>
     <!-- Fi del Script Principal -->
     <!-- Scripts -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

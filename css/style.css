@@ -199,7 +199,7 @@ footer {
   overflow: hidden;
 }
 
-/* Per a una major legibilitat dels titols dels destacats*/
+/* Per a una major legibilitat dels titols dels destacats */
 .featured h1 {
   text-shadow: 2px 2px 5px #000000;
 }
@@ -264,6 +264,14 @@ footer {
   color: var(--colorCorp);
 }
 
+.s-content_author-name{
+  transition: all 0.3s ease-in-out;
+}
+
+.s-content_author-name:hover {
+  color: rgba(18, 58, 188, 0.4);
+}
+
 .s-content_author p {
   text-align: justify;
 }
@@ -288,6 +296,23 @@ footer {
 
 .author-social a:hover {
   color: rgba(18, 58, 188, 0.4);
+}
+
+.s-content_header-subtitle {
+  margin-top: 35px;
+}
+
+.articles-redactor {
+  padding-top: 2.8rem !important;
+}
+
+/* Per fer els titols dels articles de cada autor més curts */
+.about h5 {
+  width: 700px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--colorCorp);
 }
 
 /* Contacta'ns
@@ -385,6 +410,9 @@ footer {
     -webkit-line-clamp: 2; /* Número de linies */
     -webkit-box-orient: vertical;
     margin-bottom: 15px;
+  }
+  .about article {
+    margin-bottom: 0px !important;
   }
 }
 
