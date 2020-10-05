@@ -134,6 +134,7 @@ footer {
   height: 48px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 6rem;
 }
 
 .footer_social {
@@ -224,10 +225,11 @@ footer {
 
 .entry_title {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   display: -webkit-box;
+  -webkit-line-clamp: 2; /* Número de linies */
   -webkit-box-orient: vertical;
+  height: 60px;
 }
 
 /* Fer els paràgrafs més curts */
@@ -260,15 +262,19 @@ footer {
   margin: 35px 0px;
 }
 
-.s-content_author-name {
+/*.s-content_author-name {
   color: var(--colorCorp);
-}
+}*/
 
-.s-content_author-name{
+.s-content_author-name {
   transition: all 0.3s ease-in-out;
 }
 
-.s-content_author-name:hover {
+.s-content_author-about a {
+  color: var(--colorCorp);
+}
+
+.s-content_author-about a:hover {
   color: rgba(18, 58, 188, 0.4);
 }
 
@@ -399,6 +405,13 @@ footer {
 /* Media Queries
  * ----------------------------------------------------- */
 
+@media only screen and (min-width: 1200px) {
+  /* Per fer els li dels footer més llargs */
+  .s-footer_linklist li {
+    width: 150px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .footer_social ul {
     margin: 0 43%;
@@ -413,6 +426,9 @@ footer {
   }
   .about article {
     margin-bottom: 0px !important;
+  }
+  .about h5 {
+    width: 350px;
   }
 }
 
@@ -432,6 +448,9 @@ footer {
   }
   .footer_social ul {
     margin: 0 38%;
+  }
+  .s-footer_linklist li {
+    width: 100%º;
   }
 }
 
@@ -487,4 +506,8 @@ footer {
 /* Botó pàgina login */
 .row #contrasenya {
   margin-bottom: 20px;
+}
+
+.blue_text {
+  color: var(--colorCorp);
 }
