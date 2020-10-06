@@ -4398,7 +4398,6 @@ textarea {
   .hide-on-mobile {
     display: none;
   }
-  
 }
 
 @media only screen and (max-width: 400px) {
