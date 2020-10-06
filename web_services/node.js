@@ -304,6 +304,34 @@ app.get("/games", (req, res) => {
   });
 });
 
+/* WS per agafar els jocs (Pàgina "games.html")
+ * -------------------------------------------------------------------------------------------------------*/
+app.get("/joc", (req, res) => {
+  var con = mysql.createConnection({
+    host: "217.61.130.155",
+    user: "admin_games",
+    password: "12345678",
+    database: "admin_games",
+  });
+  con.connect(function (err) {
+    if (err) throw err;
+    //Agafar els jocs i ordenar-los alfabéticament
+    con.query("SELECT * FROM jocs WHERE url='"+req.query.url+"'", function (
+      err,
+      result,
+      fields
+    ) {
+      if (err) throw err;
+    
+      res.header("Content-Type", "application/json");
+      res.status(200).json(result[0]);
+      
+      con.end();
+    });
+  });
+});
+
+
 app.listen(3000, () => {
   //port, no volem opcions de servidor
   //no és obligatori posar-hi res

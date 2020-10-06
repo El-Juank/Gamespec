@@ -88,13 +88,13 @@
           >
           <nav class="header_nav-wrap">
             <ul class="header_nav">
-              <li><a href="games.html" title="">Jocs</a></li>
-              <li><a href="articles.html" title="">Articles</a></li>
-              <li><a href="about.html" title="">Els nostres redactors</a></li>
+              <li><a href="games" title="">Jocs</a></li>
+              <li><a href="articles" title="">Articles</a></li>
+              <li><a href="about" title="">Els nostres redactors</a></li>
               <li>
-                <a href="crear_article.html" title="">Escriure article</a>
+                <a href="escriure_article" title="">Escriure article</a>
               </li>
-              <li><a href="contact.html" title="">Contacta'ns</a></li>
+              <li><a href="contact" title="">Contacta'ns</a></li>
             </ul>
             <a
               href="#"
@@ -253,7 +253,7 @@
             $("#destacat1").append(
               "<div class='entry' style='background-image: url(" +
                 data[i].portada +
-                ");'><div class='entry_content'><span class='entry_category'><a href='#'>Videojocs</a></span><h1><a href='#0' title=''>" +
+                ");'><div class='entry_content'><span class='entry_category'><a href='#'>Videojocs</a></span><h1><a href='noticia/"+data[i].url+"' title=''>" +
                 data[i].articlenom +
                 "</a></h1><div class='entry_info'><a href='#' class='entry_profile-pic'><img class='avatar' src='" +
                 data[i].redactorimage +
@@ -276,9 +276,9 @@
             $("#destacat2i3").append(
               "<div class='entry' style=' background-image: url(" +
                 data[i].portada +
-                "); ' > <div class='entry_content'> <span class='entry_category' ><a href='#'>Videojocs</a></span><h1> <a href='#' title=''>" +
+                "); ' > <div class='entry_content'> <span class='entry_category' ><a href='#'>Videojocs</a></span><h1> <a href='noticia/"+data[i].url+"' title=''>" +
                 data[i].articlenom +
-                "</a > </h1><div class='entry_info'> <a href='#' class='entry_profile-pic'> <img class='avatar' src='" +
+                "</a > </h1><div class='entry_info'> <a href='"+data[i].url+"' class='entry_profile-pic'> <img class='avatar' src='" +
                 data[i].redactorimage +
                 "' alt='" +
                 data[i].redactornom +
@@ -299,15 +299,15 @@
             $("#articles").append(
               "<article class='masonry_brick entry format-standard' data-aos='fade-up'>" +
                 "<div class='entry_thumb'>" +
-                "<a href='#'' class='entry_thumb-link'>" +
+                "<a href='noticia/"+data[i].url+"'' class='entry_thumb-link'>" +
                 "<img src='" +
                 data[i].portada +
                 "' alt='" +
                 data[i].articlenom +
                 "' /></a></div><div class='entry_text'><div class='entry_header'><div class='entry_date'>" +
                 data[i].articledata +
-                "</div><h1 class='entry_title'><a href='#'>" +
-                data[i].articlenom +
+                "</div><h1 class='entry_title'><a href='noticia/"+data[i].url+"'>"+
+               data[i].articlenom +
                 "</a></h1></div><div class='entry_excerpt'><p class='article-thumb'>" +
                 data[i].articleresum +
                 "</p></div><div class='entry_meta'><span class='entry_meta-links'><a href='category.html'>Videojocs</a></span></div></div></article>"

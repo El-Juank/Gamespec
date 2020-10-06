@@ -99,10 +99,13 @@
           >
           <nav class="header_nav-wrap">
             <ul class="header_nav">
-              <li><a href="games.html" title="">Jocs</a></li>
-              <li><a href="articles.html" title="">Articles</a></li>
-              <li><a href="about.html" title="">Els nostres redactors</a></li>
-              <li><a href="contact.html" title="">Contacta'ns</a></li>
+              <li><a href="games" title="">Jocs</a></li>
+              <li><a href="articles" title="">Articles</a></li>
+              <li><a href="about" title="">Els nostres redactors</a></li>
+              <li>
+                <a href="escriure_article" title="">Escriure article</a>
+              </li>
+              <li><a href="contact" title="">Contacta'ns</a></li>
             </ul>
             <a
               href="#"
@@ -119,8 +122,8 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
       <ul class="breadcrumb-content">
-        <li><a href="index.html">Inici</a></li>
-        <li><a href="games.html">Jocs</a></li>
+        <li><a href="index">Inici</a></li>
+        <li><a href="games">Jocs</a></li>
       </ul>
     </div>
     <!-- Fi del Breadcrumb -->
@@ -248,15 +251,15 @@
           var i = 0;
           for (i = 0; i < data.length; i++) {
             $("#games").append(
-              "<article class='single-game col-block games_post'><a href='#' class='games_thumb'><img src='" +
+              "<article class='single-game col-block games_post'><a href='./joc/"+data[i].url+"' class='games_thumb'><img src='" +
                 data[i].jocportada +
                 "' alt='" +
                 data[i].jocnom +
-                "'/></a><h5><a href='#'>" +
+                "'/></a><h5><a href='./joc/"+data[i].url+"'>" +
                 data[i].jocnom +
                 "</a></h5><p>" +
                 data[i].jocdescripcio +
-                "</p><section class='games_meta'><span class='games_author'><span>Gènere:</span> <a href='#'>" +
+                "</p><section class='games_meta'><span class='games_author'><span>Gènere:</span> <a href='./joc/"+data[i].url+"'>" +
                 data[i].categorianom +
                 "</a></span></section></article><hr>"
             );

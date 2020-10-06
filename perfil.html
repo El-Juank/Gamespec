@@ -2,206 +2,228 @@
 <html lang="ca">
 
 <head>
-    <!--Required meta tags-->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="author" content="Team Gamespec" />
-    <meta name="description"
-        content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més" />
-    <title>Gamespec</title>
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <!--Font Awesome CSS-->
-    <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
-    <!--CSS propis-->
-    <link rel="stylesheet" href="css/style.css" />
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <!--Scripts-->
-    <script src="js/modernizr.js"></script>
+  <!--Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="author" content="Team Gamespec" />
+  <meta name="description"
+    content="Portal de videojocs amb totes les notícies, anàlisi i reviews sobre PS5, PS4, PC, Nintendo Switch, PC, Xbox, iOS, Android i més" />
+  <title>Gamespec</title>
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <!--Font Awesome CSS-->
+  <link href="css/font-awesome/css/all.min.css" rel="stylesheet" />
+  <!--CSS propis-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!--Scripts-->
+  <script src="js/modernizr.js"></script>
 
-    <script>
-        $(document).ready(function () {
-        $("#btn_login").click(function () {
-      
-            var correu = document.getElementById("correu").value;
-            var contrasenya = document.getElementById("contrasenya").value;
-            
-            $.get("web_services/login.php?correu=" + correu + "&contrasenya=" + contrasenya, function (data, json) {
-               
-                var obj = $.parseJSON(data);
-                window.alert(obj.id);
-                if(obj.id>0){
-                    window.location.href = "./index.html"
-                    
-                }
 
-            });
-        });
-    });
-
-    </script>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <section class="pageheader">
-        <header class="header">
-            <div class="header_content row">
-                <!-- Logo -->
-                <div class="header_logo">
-                    <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
-                        <img src="images/gamespec_logo.svg" alt="Homepage" />
-                    </a>
-                </div>
-                <!-- Fi del Logo -->
-                <!-- XXSS -->
-                <ul class="header_social">
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Facebook de Gamespec"><i class="fab fa-facebook"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Twitter de Gamespec"><i class="fab fa-twitter"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Instagram de Gamespec"><i class="fab fa-instagram"
-                                aria-hidden="true"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" title="Ves al Youtube de Gamespec"><i class="fab fa-youtube"
-                                aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-                <!-- Fi de les XXSS -->
-                <!-- Toggle Menu -->
-                <a class="header_toggle-menu" href="#0" title="Menú"><span>Menu</span></a>
-                <nav class="header_nav-wrap">
-                    <img class="header_nav-heading header_nav-logo" src="images/gamespec_logo.svg" alt="Homepage" />
-                    <ul class="header_nav">
-                        <li><a href="#" title="">Jocs</a></li>
-                        <li><a href="#" title="">Articles</a></li>
-                        <li><a href="#" title="">Els nostres redactors</a></li>
-                        <li><a href="#" title="">Contacta'ns</a></li>
-                    </ul>
-                    <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
-                </nav>
-                <!-- Fi del Toggle Menu -->
-            </div>
-        </header>
-    </section>
-    <!-- Fi del Header -->
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <ul class="breadcrumb-content">
-            <li><a href="#">Inici</a></li>
+  <!-- Header -->
+  <section class="pageheader">
+    <header class="header">
+      <div class="header_content row">
+        <!-- Logo -->
+        <div class="header_logo">
+          <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+            <img src="images/gamespec_logo.svg" alt="Homepage" />
+          </a>
+        </div>
+        <!-- Fi del Logo -->
+        <!-- XXSS -->
+        <ul class="header_social">
+          <li>
+            <a href="#" target="_blank" title="Ves al Facebook de Gamespec"><i class="fab fa-facebook"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Twitter de Gamespec"><i class="fab fa-twitter"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Instagram de Gamespec"><i class="fab fa-instagram"
+                aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank" title="Ves al Youtube de Gamespec"><i class="fab fa-youtube"
+                aria-hidden="true"></i></a>
+          </li>
         </ul>
+        <!-- Fi de les XXSS -->
+        <!-- Toggle Menu -->
+        <a class="header_toggle-menu" href="#0" title="Menú"><span>Menu</span></a>
+        <nav class="header_nav-wrap">
+          <ul class="header_nav">
+            <li><a href="games" title="">Jocs</a></li>
+            <li><a href="articles" title="">Articles</a></li>
+            <li><a href="about" title="">Els nostres redactors</a></li>
+            <li>
+              <a href="escriure_article" title="">Escriure article</a>
+            </li>
+            <li><a href="contact" title="">Contacta'ns</a></li>
+          </ul>
+          <a href="#" title="Tenca el menú" class="header_overlay-close close-mobile-menu">Close</a>
+        </nav>
+        <!-- Fi del Toggle Menu -->
+      </div>
+    </header>
+  </section>
+  <!-- Fi del Header -->
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <ul class="breadcrumb-content">
+      <li><a href="#">Inici</a></li>
+    </ul>
+  </div>
+  <!-- Fi del Breadcrumb -->
+  <!-- Destacats -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-six tab-full">
+        <h3 class="add-bottom">Perfil</h3>
+        <div>
+          <div class="rounded-circle d-inline p-2">
+            <img src="https://image.flaticon.com/icons/png/512/149/149071.png" height="200" width="200"
+              class="d-inline p-2" id="user_image">
+          </div>
+          <input id="inputFile" type="file">
+          <br><br>
+          <button id="btnEnviar">Enviar</button>
+        </div>
+        <form>
+          <div>
+            <label for="sampleInput">Nom</label>
+            <input class="full-width" type="text" id="nom">
+            <label for="sampleInput">Email</label>
+            <input class="full-width" type="email" placeholder="" id="email">
+          </div>
+          <input class="btn--primary full-width" type="submit" value="Guardar">
+
+        </form>
+
+      </div>
     </div>
-    <!-- Fi del Breadcrumb -->
-    <!-- Destacats -->
-    <div class="container">
-        <div class="row">
-
-            <h3 class="add-bottom">Iniciar sesión</h3>
-
-            <form  target="_blank">
-                <div>
-                    <label for="correu">Correu</label>
-                    <input class="full-width" type="email" placeholder="Correu" id="correu" name="correu">
-                    <label for="sampleInput">contrasenya</label>
-                    <input class="full-width" type="password" id="contrasenya" placeholder="Contrasenya" name="contrasenya">
-                </div>
-
-
-                <input class="btn--primary full-width" type="button" value="Iniciar sesió" id="btn_login">
-
-            </form>
 
 
 
-        </div> <!-- end row -->
-        <!-- Fi dels Destacats -->
-            <!-- Footer -->
+
+
+    <!-- Fi dels Destacats -->
+    <!-- Footer -->
     <div class="footer">
-        <footer class="s-footer">
-          <div class="s-footer_main">
-            <div class="row">
-              <!-- Logo -->
-              <div class="footer_logo">
-                <a
-                  class="logo"
-                  href="index.html"
-                  title="Anar a la portada de Gamespec"
-                >
-                  <img src="images/gamespec_logo_white.svg" alt="Homepage" />
-                </a>
-              </div>
-              <!-- Fi del Logo -->
-              <div class="col-four md-four mob-full s-footer_sitelinks">
-                <ul class="s-footer_linklist">
-                  <li><h4>Enllaços:</h4></li>
-                  <li><a href="games.html">Jocs</a></li>
-                  <li><a href="articles.html">Articles</a></li>
-                  <li><a href="about.html">Els nostres redactors</a></li>
-                  <li><a href="contact.html">Contacta'ns</a></li>
-                </ul>
-              </div>
-              <!-- XXSS -->
-              <div class="col-four md-four mob-full s-footer_social">
-                <ul class="s-footer_linklist">
-                  <li><h4>Segueix-nos a:</h4></li>
-                  <li>
-                    <a href="#0"
-                      ><i class="fab fa-facebook" aria-hidden="true"></i>
-                      Facebook</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#0"
-                      ><i class="fab fa-twitter" aria-hidden="true"></i>
-                      Twitter</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#0"
-                      ><i class="fab fa-instagram" aria-hidden="true"></i>
-                      Instagram</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#0"
-                      ><i class="fab fa-youtube" aria-hidden="true"></i>
-                      YouTube</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <!-- Fi de les XXSS -->
-              <div class="col-four md-four mob-full s-footer_archives">
-                <ul class="s-footer_linklist">
-                  <li><h4>Troba'ns a:</h4></li>
-                  <li>Passeig de la Devesa, 34</li>
-                  <li>17001, Girona</li>
-                  <li><a href="mailto:info@gamespec.com">info@gamespec.com</a></li>
-                </ul>
-              </div>
+      <footer class="s-footer">
+        <div class="s-footer_main">
+          <div class="row">
+            <!-- Logo -->
+            <div class="footer_logo">
+              <a class="logo" href="index.html" title="Anar a la portada de Gamespec">
+                <img src="images/gamespec_logo_white.svg" alt="Homepage" />
+              </a>
+            </div>
+            <!-- Fi del Logo -->
+            <div class="col-four md-four mob-full s-footer_sitelinks">
+              <ul class="s-footer_linklist">
+                <li>
+                  <h4>Enllaços:</h4>
+                </li>
+                <li><a href="games.html">Jocs</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="about.html">Els nostres redactors</a></li>
+                <li><a href="contact.html">Contacta'ns</a></li>
+              </ul>
+            </div>
+            <!-- XXSS -->
+            <div class="col-four md-four mob-full s-footer_social">
+              <ul class="s-footer_linklist">
+                <li>
+                  <h4>Segueix-nos a:</h4>
+                </li>
+                <li>
+                  <a href="#0"><i class="fab fa-facebook" aria-hidden="true"></i>
+                    Facebook</a>
+                </li>
+                <li>
+                  <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i>
+                    Twitter</a>
+                </li>
+                <li>
+                  <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i>
+                    Instagram</a>
+                </li>
+                <li>
+                  <a href="#0"><i class="fab fa-youtube" aria-hidden="true"></i>
+                    YouTube</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Fi de les XXSS -->
+            <div class="col-four md-four mob-full s-footer_archives">
+              <ul class="s-footer_linklist">
+                <li>
+                  <h4>Troba'ns a:</h4>
+                </li>
+                <li>Passeig de la Devesa, 34</li>
+                <li>17001, Girona</li>
+                <li><a href="mailto:info@gamespec.com">info@gamespec.com</a></li>
+              </ul>
             </div>
           </div>
-        </footer>
-      </div>
-      <!-- Fi del Footer -->
-        <!--Script Login-->
-      
-        <!-- Scripts -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        </div>
+      </footer>
+    </div>
+    <!-- Fi del Footer -->
+    <!--Script Login-->
+
+    <script>
+      const btnEnviar = document.querySelector("#btnEnviar");
+      const inputFile = document.querySelector("#inputFile");
+      btnEnviar.addEventListener("click", () => {
+        if (inputFile.files.length > 0) {
+          $(function () {
+            $(document).ready(function () {
+              $.get("web_services/get_user.php", function (data, json) {
+                var obj = $.parseJSON(data);
+
+                if (data != "null") {
+                  let formData = new FormData();
+                  formData.append("archivo", inputFile.files[0]); // En la posición 0; es decir, el primer elemento
+                  fetch("https://gamespec2.000webhostapp.com/php/upload.php?id=" + obj.id, {
+                    method: 'POST',
+                    body: formData,
+
+                  })
+                    .then(respuesta => respuesta.text())
+                    .then(decodificado => {
+                      console.log(decodificado);
+                    });
+                }
+              });
+            });
+          })
+
+        } else {
+          // El usuario no ha seleccionado archivos
+          alert("Selecciona un archivo");
+        }
+      });
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

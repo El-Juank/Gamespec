@@ -35,26 +35,12 @@
 
     <script>
    $(document).ready(function () {
-       var url = "<?php  echo $_GET["noticia"];?>";
-
-       $.get("../web_services/get_article.php?url=" + url, function (data, json) {
-
-var obj = $.parseJSON(data);
-if (obj.articleid > 0) {
-  
-$('h1').text(obj.articlenom);
-  $('#portada').attr("src", obj.portada)
-  $('#contingut').html(obj.articlecontigut);
-  $('#facebook').attr("href",obj.articlefacebook); 
-  $('#twitter').attr("href",obj.redactortwitter); 
-$('#instagram').attr("href",obj.redactorinstagram); 
-$('#autor_descripcio').html(obj.redactordescripcio);
-$('#autor_pic').attr("src", obj.redactorimage);
-$('#autor_nom').text(obj.redactornom); 
-
-}
-
-});
+       var url = "<?php  echo $_GET["joc"];?>";
+       $.get("http://localhost:3000/joc?url=" + url, function (data, json) {
+        $('#descripcio_joc').text(data.jocdescripcio);
+        $('#img_joc').attr("src", data.jocportada);
+        $('#titoljoc').text(data.jocnom);
+        });
 
         });
 
@@ -153,8 +139,8 @@ $('#autor_nom').text(obj.redactornom);
     <!-- Breadcrumb -->
     <div class="breadcrumb">
       <ul class="breadcrumb-content">
-        <li><a href="../index.html">Inici</a></li>
-        <li><a href="../articles.html">Articles</a></li>
+        <li><a href="../index">Inici</a></li>
+        <li><a href="../games">Jocs</a></li>
         <li><a href="#">Article</a></li>
       </ul>
     </div>
@@ -163,7 +149,7 @@ $('#autor_nom').text(obj.redactornom);
     <div class="s-content s-content--narrow s-content--no-padding-bottom">
       <article class="row format-standard">
         <div class="s-content_header col-full">
-          <h1 class="s-content_header-title">
+          <h1 class="s-content_header-title" id="titoljoc">
             Article d'exemple.
           </h1>
           <ul class="s-content_header-meta">
@@ -187,28 +173,14 @@ $('#autor_nom').text(obj.redactornom);
 
         <div class="col-full s-content_main">
 
-        <div id="contingut"> </div>
-      
-
-          <div class="s-content_author">
-            <img id="autor_pic" src="../images/avatars/user-03.jpg" alt="" />
-
-            <div class="s-content_author-about">
-              <h4 class="s-content_author-name">
-                <a href="#0" id="autor_nom">Cristiana Suyen</a>
-              </h4>
-
-              <p id="autor_descripcio">
-                
-              </p>
-
-              <ul class="author-social">
-                <li><a id="facebook" href="#0">Facebook</a></li>
-                <li><a id="twitter" href="#0">Twitter</a></li>
-                <li><a id="instagram" href="#0">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
+        <div id="contingut" class="col-xs-1 text-center"> 
+        <img src="https://raw.githubusercontent.com/El-Juank/Gamespec/master/images/games/callofduty.jpeg" id="img_joc">
+        <p id="descripcio_joc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec neque eu magna sollicitudin pellentesque elementum a quam. Quisque pulvinar vehicula quam vel fermentum. Maecenas lobortis maximus quam at aliquam. Morbi euismod auctor enim. Praesent vel lorem ut sapien faucibus consectetur quis at lacus. Aenean ac feugiat felis. Donec placerat cursus ullamcorper. Donec eleifend elit a tortor semper lobortis. Nunc egestas orci a lectus eleifend, vel lobortis odio blandit. Nullam et felis in nunc ullamcorper accumsan. Vestibulum pretium in ligula in gravida. Donec sit amet facilisis elit. Sed ultricies est eu erat ultrices tempus. 
+        Aenean sit amet eros tristique, tincidunt quam gravida, lacinia enim. Donec tincidunt varius fringilla.</p>
+        
+        </div>
+        
+    
         </div>
       </article>
     </div>
